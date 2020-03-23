@@ -792,8 +792,9 @@
     <property name="title">
      <string>设备</string>
     </property>
-    <addaction name="actionsdsad"/>
-    <addaction name="actionqiehua"/>
+    <addaction name="actionChange"/>
+    <addaction name="actionExit"/>
+    <addaction name="actionlogin"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="styleSheet">
@@ -802,24 +803,34 @@
     <property name="title">
      <string>关于</string>
     </property>
-    <addaction name="actionwewe"/>
+    <addaction name="actionInfo"/>
    </widget>
    <addaction name="menu"/>
    <addaction name="menu_2"/>
   </widget>
-  <action name="actionqiehua">
+  <action name="actionExit">
    <property name="text">
     <string>退出</string>
    </property>
   </action>
-  <action name="actionsdsad">
+  <action name="actionChange">
    <property name="text">
     <string>切换</string>
    </property>
   </action>
-  <action name="actionwewe">
+  <action name="actionInfo">
    <property name="text">
     <string>使用说明</string>
+   </property>
+  </action>
+  <action name="actionsds">
+   <property name="text">
+    <string>登录</string>
+   </property>
+  </action>
+  <action name="actionlogin">
+   <property name="text">
+    <string>登录</string>
    </property>
   </action>
  </widget>

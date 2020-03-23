@@ -50,6 +50,11 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
         self.camera_face.clicked.connect(self.video)
         self.camera_eyes.clicked.connect(self.video)
         self.camera_close.clicked.connect(self.video)
+        self.loginWindow = DialogConnect()
+        self.actionLogin.triggered.connect(self.loginDialog)
+
+    def loginDialog(self):
+        self.loginWindow.show()
 
     """
         行动控制界面
@@ -157,7 +162,6 @@ class DialogConnect(QtWidgets.QDialog, Ui_dialog_connect):
         self.setupUi(self)
         self.btn_connect.clicked.connect(self.connect_car)
         self.btn_clear.clicked.connect(self.clear_mac_input)
-        self.main = TankWindow()
 
     # 小车连接
     def connect_car(self):
@@ -166,8 +170,6 @@ class DialogConnect(QtWidgets.QDialog, Ui_dialog_connect):
             result = connect_mqtt(mac_id)
             if result['ret'] is True:
                 QMessageBox.information(self, "连接状态", "连接成功！", QMessageBox.Yes, QMessageBox.Yes)
-                self.close()
-                self.main.show()
             else:
                 QMessageBox.information(self, "连接状态", result['msg'], QMessageBox.Yes, QMessageBox.Yes)
         else:
@@ -180,8 +182,8 @@ class DialogConnect(QtWidgets.QDialog, Ui_dialog_connect):
 
 def main():
     app = QtWidgets.QApplication(sys.argv)
-    dialog_connect = DialogConnect()
-    dialog_connect.show()
+    mainWindow = TankWindow()
+    mainWindow.show()
     sys.exit(app.exec_())
 
 
