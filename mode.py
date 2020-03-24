@@ -1,6 +1,9 @@
 from PyQt5 import QtWidgets, QtGui
 from ui.login import Ui_modeDialog
 from PyQt5.QtGui import QIcon
+from modes.tank.tank import TankWindow
+from PyQt5.QtWidgets import QMessageBox
+from interface import reset_config
 
 
 # 登录页面选择不同模式
@@ -13,11 +16,14 @@ class ModeDialog(QtWidgets.QDialog, Ui_modeDialog):
         self.option_mac.setIcon(QIcon('static/image/logo_mac.png'))
         self.btn_close.clicked.connect(self.close)
         self.btn_enter.clicked.connect(self.enter_option)
+        self.tankWindow = TankWindow()
 
     # 进入不同的选项
     def enter_option(self):
+        reset_config()
+        self.close()
         if self.option_tank.isChecked():
-            print(111)
+            self.tankWindow.show()
         elif self.option_mac.isChecked():
             print(222)
         elif self.option_pc.isChecked():

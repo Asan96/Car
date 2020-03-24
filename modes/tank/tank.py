@@ -55,7 +55,14 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
 
     def loginDialog(self):
         self.loginWindow.show()
-
+    
+    # mqtt 报错提示
+    
+    def send(self, msg):
+        result = mqtt_send(msg)
+        if not result['ret']:
+            QMessageBox.warning(self, "警告",result['msg'], QMessageBox.Yes, QMessageBox.Yes)
+            
     """
         行动控制界面
     """
@@ -67,7 +74,7 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
         msg = name + '_off'
         if checkObj.isChecked():
             msg = name+'_on'
-        mqtt_send(msg)
+        self.send(msg)
 
     # 键盘控制
     def keyboard_move(self):
@@ -80,7 +87,7 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
     # 小车行动控制及摄像头控制
     def car_move(self):
         command = self.sender().objectName()
-        mqtt_send(command)
+        self.send(command)
 
     # 检测键盘回车按键，函数名字不能改，这是重写键盘事件
     def keyPressEvent(self, event):
@@ -88,7 +95,7 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
                    81: 'car_rotate'}
         # 这里event.key（）显示的是按键的编码
         if isKeyboard and event.key() in key_dic.keys():
-            mqtt_send(key_dic[event.key()])
+            self.send(key_dic[event.key()])
 
     # 图像传输服务端打开
     def thread_camera(self, pannel=None, type='origin'):
@@ -137,7 +144,7 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
             if len(text) >= 50:
                 QMessageBox.warning(self, "警告", "文字对话内容请在50字以内！", QMessageBox.Yes, QMessageBox.Yes)
                 return
-        mqtt_send(command)
+        self.send(command)
         self.input_composite_text.setText('')
         self.input_send_text.setText('')
 
