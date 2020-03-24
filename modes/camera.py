@@ -112,8 +112,8 @@ def close_camera_client():
 def open_camera_client():
     global cam_flag
     cam_flag = 0
-    mqtt_send('camera_open')
-    return {'ret': True, 'msg': ''}
+    result = mqtt_send('camera_open')
+    return result
 
 
 def take_photo():

@@ -1,5 +1,9 @@
 import sys
+
 from PyQt5 import QtWidgets, QtGui
+from PyQt5.QtWidgets import QMainWindow, QTextEdit, QAction, QApplication
+from PyQt5.QtCore import QFileInfo,Qt
+from PyQt5.QtGui import QIcon
 from ui.tankWindow import Ui_tankWindow
 from PyQt5.QtWidgets import QMessageBox
 from ui.connectDialog import Ui_dialog_connect
@@ -7,6 +11,7 @@ from modes.tank.mqtt import mqtt_send, connect_mqtt
 from modes.camera import ImgServer, open_camera_client, close_camera_client
 import threading
 from datetime import datetime
+from __init__ import camera_background_path
 
 """
 主窗口
@@ -34,7 +39,7 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
         self.car_cam_left.clicked.connect(self.car_move)
         self.car_cam_right.clicked.connect(self.car_move)
 
-        self.background = QtGui.QPixmap('./static/image/camera_background.jpg')
+        self.background = QtGui.QPixmap(camera_background_path)
         self.video_pannel.setPixmap(self.background)
         self.origin_camera.setPixmap(self.background)
 
@@ -52,6 +57,29 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
         self.camera_close.clicked.connect(self.video)
         self.loginWindow = DialogConnect()
         self.actionLogin.triggered.connect(self.loginDialog)
+        self.toolBar.setToolButtonStyle(Qt.ToolButtonTextBesideIcon)  # 文字图片水平排列
+        root = QFileInfo(__file__).absolutePath()
+        self.actionLogin.setIcon(QIcon(root+'/icon/connect.ico'))
+        self.actionChange.setIcon(QIcon(root+'/icon/change.ico'))
+        self.actionInfo.setIcon(QIcon(root+'/icon/info.ico'))
+        self.actionExit.setIcon(QIcon(root+'/icon/disconnect.ico'))
+        self.loginWindow.btn_connect.clicked.connect(self.login_status)
+
+    # 小车连接
+    def login_status(self):
+        mac_id = self.loginWindow.input_macId.text()
+        if mac_id[4:6] == '03' and mac_id.isdigit():
+            result = connect_mqtt(mac_id)
+            if result['ret'] is True:
+                self.actionStatus.setText(self.loginWindow.input_macId.text())
+                QMessageBox.information(self, "连接状态", "连接成功！", QMessageBox.Yes, QMessageBox.Yes)
+                self.loginWindow.close()
+            else:
+                QMessageBox.information(self, "连接状态", result['msg'], QMessageBox.Yes, QMessageBox.Yes)
+        else:
+            QMessageBox.warning(self, "警告", "请输入格式正确的设备id！", QMessageBox.Yes, QMessageBox.Yes)
+
+
 
     def loginDialog(self):
         self.loginWindow.show()
@@ -167,20 +195,7 @@ class DialogConnect(QtWidgets.QDialog, Ui_dialog_connect):
     def __init__(self):
         super(DialogConnect, self).__init__()
         self.setupUi(self)
-        self.btn_connect.clicked.connect(self.connect_car)
         self.btn_clear.clicked.connect(self.clear_mac_input)
-
-    # 小车连接
-    def connect_car(self):
-        mac_id = self.input_macId.text()
-        if mac_id[4:6] == '03' and mac_id.isdigit():
-            result = connect_mqtt(mac_id)
-            if result['ret'] is True:
-                QMessageBox.information(self, "连接状态", "连接成功！", QMessageBox.Yes, QMessageBox.Yes)
-            else:
-                QMessageBox.information(self, "连接状态", result['msg'], QMessageBox.Yes, QMessageBox.Yes)
-        else:
-            QMessageBox.warning(self, "警告", "请输入格式正确的设备id！", QMessageBox.Yes, QMessageBox.Yes)
 
     # 连接输入框清空
     def clear_mac_input(self):

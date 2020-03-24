@@ -17,6 +17,12 @@ class ModeDialog(QtWidgets.QDialog, Ui_modeDialog):
         self.btn_close.clicked.connect(self.close)
         self.btn_enter.clicked.connect(self.enter_option)
         self.tankWindow = TankWindow()
+        self.tankWindow.actionChange.triggered.connect(self.tankToMode)
+
+    # tank页面回到模式选择页面
+    def tankToMode(self):
+        self.tankWindow.close()
+        self.show()
 
     # 进入不同的选项
     def enter_option(self):
