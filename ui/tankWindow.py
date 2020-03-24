@@ -242,6 +242,9 @@ class Ui_tankWindow(object):
         self.tabMenuWidget.addTab(self.tab_video, "")
         self.tab_code = QtWidgets.QWidget()
         self.tab_code.setObjectName("tab_code")
+        self.widgetCode = QtWidgets.QWidget(self.tab_code)
+        self.widgetCode.setGeometry(QtCore.QRect(0, 0, 991, 631))
+        self.widgetCode.setObjectName("widgetCode")
         self.tabMenuWidget.addTab(self.tab_code, "")
         tankWindow.setCentralWidget(self.widget)
         self.toolBar = QtWidgets.QToolBar(tankWindow)
@@ -306,7 +309,7 @@ class Ui_tankWindow(object):
         self.toolBar.addAction(self.actionStatus)
 
         self.retranslateUi(tankWindow)
-        self.tabMenuWidget.setCurrentIndex(0)
+        self.tabMenuWidget.setCurrentIndex(3)
         QtCore.QMetaObject.connectSlotsByName(tankWindow)
 
     def retranslateUi(self, tankWindow):

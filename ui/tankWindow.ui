@@ -66,7 +66,7 @@
      <string notr="true">color:#2F4056;</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <property name="iconSize">
      <size>
@@ -753,6 +753,16 @@
      <attribute name="title">
       <string>代码编辑</string>
      </attribute>
+     <widget class="QWidget" name="widgetCode" native="true">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>991</width>
+        <height>631</height>
+       </rect>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
