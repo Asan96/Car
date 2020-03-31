@@ -1,17 +1,21 @@
 import sys
+import subprocess
+import queue
 
 from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtWidgets import QMainWindow, QTextEdit, QAction, QApplication
-from PyQt5.QtCore import QFileInfo,Qt
+from PyQt5.QtCore import QFileInfo, Qt
 from PyQt5.QtGui import QIcon
 from ui.tankWindow import Ui_tankWindow
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QMessageBox, QFileDialog
 from ui.connectDialog import Ui_dialog_connect
 from modes.tank.mqtt import mqtt_send, connect_mqtt
 from modes.camera import ImgServer, open_camera_client, close_camera_client
 import threading
 from datetime import datetime
-from __init__ import camera_background_path
+from __init__ import camera_background_path, pyfile_path
+from interface import _write, _read
+from modes.tank.code import Code
 
 """
 主窗口
@@ -19,7 +23,7 @@ from __init__ import camera_background_path
 
 isKeyboard = False
 gapWord = ":"
-
+q = queue.Queue()
 
 class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
     def __init__(self):
@@ -64,6 +68,142 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
         self.actionInfo.setIcon(QIcon(root+'/icon/info.ico'))
         self.actionExit.setIcon(QIcon(root+'/icon/disconnect.ico'))
         self.loginWindow.btn_connect.clicked.connect(self.login_status)
+        self._lyt = QtWidgets.QVBoxLayout()
+        self._code = Code()
+        self._lyt.addWidget(self._code)
+        self.CodeWidget.setLayout(self._lyt)
+
+        self.btnRunLocal.clicked.connect(self.run_local)
+        self.btnRunStop.clicked.connect(self.run_stop)
+        self.btnRunDevice.clicked.connect(self.run_device)
+        self.btnCodeImport.clicked.connect(self.code_import)
+        self.btnCodeSave.clicked.connect(self.code_save)
+
+        self.tabMenuWidget.setStyleSheet("QTabWidget::pane{border:1px rgb(48, 104, 151) solid;\
+                                            border-style: outset;background-color: rgb(255,255 , 255);\
+                                            background: transparent;} \
+        QTabWidget::tab-bar{border-width:0px;}\
+        QTabBar::tab{border-bottom-color: #DCDCDC;\
+                     border-top-left-radius: 0px;\
+                     border-top-right-radius: 0px;\
+                     max-width: 75px; min-width:75px; min-height:30px;\
+                     font:15px Times New Roman;\
+                         padding: 0px;\
+                         }\
+        QTabBar::scroller {\
+                           width:25;\
+                               border:0;\
+                                   padding: 0px;\
+                                   }\
+        QTabBar QToolButton::right-arrow {\
+                                          background-color:#FF7F50	;\
+                                          border-width: 0;\
+                                      }\
+        QTabBar QToolButton::hover {\
+                                                background-color:rgb(132, 171, 208);\
+                                                border-width: 0;\
+                                            }\
+        QTabBar QToolButton::right-arrow:disabled {\
+                                                background-color:rgb(132, 171, 208);\
+                                                border-width: 0;\
+                                            }\
+        QTabBar QToolButton::left-arrow {\
+                                         background-color:rgb(132, 171, 208);\
+                                         border-width: 0;\
+                                     }\
+        QTabBar QToolButton::left-arrow:hover {\
+                                               background-color:rgb(132, 171, 208);\
+                                               border-width: 0;\
+                                           }\
+        QTabBar QToolButton::left-arrow:disabled {\
+                                               background-color:rgb(132, 171, 208);\
+                                               border-width: 0;\
+                                           }\
+        QTabBar::tab:first:selected {\
+                                     margin-left: 0; margin-right: 0;\
+                                     color: #FF7F50;\
+                                     }\
+        QTabBar::tab:first:!selected {\
+                                      color: black;\
+                                          margin-left: 0; margin-right: 0;\
+                                      }\
+        QTabBar::tab:first:hover:!selected {\
+                                            color: black;\
+                                                margin-left: 0; margin-right: 0;\
+                                            }\
+        QTabBar::tab:middle:selected {\
+                                      margin-top: 0; margin-left: -15; margin-right: 8;\
+                                      color: #FF7F50;\
+                                      }\
+        QTabBar::tab:middle:!selected {\
+                                       color: black;\
+                                           margin-top: 0; margin-left: -15; margin-right: 8;\
+                                       }\
+        QTabBar::tab:middle:hover:!selected {\
+                                             color: black;\
+                                                 margin-top: 0; margin-left: -15; margin-right: 8;\
+                                             }\
+        QTabBar::tab:last:selected {\
+                                    margin-top: 0px; margin-left: -10px; margin-right: 0;\
+                                    color: #FF7F50;\
+                                    }\
+        QTabBar::tab:last:!selected {\
+                                     color: black;\
+                                         margin-top: 0; margin-left: -10px; margin-right: 0;\
+                                     }\
+        QTabBar::tab:last:hover:!selected {\
+                                           color: black;\
+                                               margin-top: 0; margin-left: -10px; margin-right: 0;\
+                                           }\
+        QTabBar::tab:only-one {\
+                               margin: 0;\
+                               }")
+    '''代码编辑器'''
+    # 本地运行 需安装 Python3
+    def run_local(self):
+        global q
+        _write(pyfile_path, self._code.text())
+        try:
+            sub = subprocess.Popen("python " + pyfile_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        except Exception as e:
+            try:
+                sub = subprocess.Popen("python3 " + pyfile_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            except Exception as e:
+                self.CodeConsoleText.setText('未检测到Python运行环境！'+str(e))
+                return
+        q.put(sub)
+        sub.wait()
+        output = sub.stdout.read().decode(encoding='utf-8') if sub.stdout else ''
+        error = sub.stderr.read().decode(encoding='utf-8') if sub.stderr else ''
+        console = output + error
+        self.CodeConsoleText.setText(console)
+
+    # 终止运行
+    def run_stop(self):
+        global q
+        while not q.empty():
+            sub = q.get()
+            sub.kill()
+
+    # 设备运行
+    def run_device(self):
+        cmd = 'code'+gapWord+self._code.text()
+        mqtt_send(cmd)
+
+    # 导入代码文件
+    def code_import(self):
+        file_path = QFileDialog.getOpenFileName(self, caption="打开Python文件", filter="Python files(*.py)")[0]
+        if file_path:
+            content = _read(file_path)
+            self._code.setText(content)
+
+    # 保存代码文件
+    def code_save(self):
+        file_path = QFileDialog.getSaveFileName(self, "保存文件", "C:/Users/Administrator/Desktop","Python files(*.py)")[0]
+        if file_path:
+            _write(file_path, self._code.text())
+
+
 
     # 小车连接
     def login_status(self):
@@ -83,14 +223,14 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
 
     def loginDialog(self):
         self.loginWindow.show()
-    
+
     # mqtt 报错提示
-    
+
     def send(self, msg):
         result = mqtt_send(msg)
         if not result['ret']:
             QMessageBox.warning(self, "警告",result['msg'], QMessageBox.Yes, QMessageBox.Yes)
-            
+
     """
         行动控制界面
     """
@@ -177,12 +317,13 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
         self.input_send_text.setText('')
 
     def video(self):
-        type = self.sender().objectName().split('_')[-1]
-        if type == 'close':
+        str_type = self.sender().objectName().split('_')[-1]
+        print(str_type)
+        if str_type == 'close':
             close_camera_client()
             self.video_pannel.setPixmap(self.background)
             return
-        cameraThread = threading.Thread(target=self.thread_camera, args=(self.video_pannel, type))
+        cameraThread = threading.Thread(target=self.thread_camera, args=(self.video_pannel, str_type))
         cameraThread.start()
 
 

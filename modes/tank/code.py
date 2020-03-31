@@ -10,7 +10,7 @@ import sys
 class LexerPython(QsciLexerPython):
     def __init__(self, parent):
         QsciLexerPython.__init__(self, parent)
-        self.setFont(QtGui.QFont('Consolas', 16))  # 设置默认字体
+        self.setFont(QtGui.QFont('Consolas', 14))  # 设置默认字体
         self.setColor(QColor(0, 0, 0))  # 设置默认的字体颜色
         self.setPaper(QColor(255, 255, 255))  # 设置底色
         self.setColor(QColor("#B0171F"), QsciLexerPython.Keyword)
@@ -24,7 +24,7 @@ class LexerPython(QsciLexerPython):
         self.setColor(QColor("#0000FF"), QsciLexerPython.UnclosedString)  # 未完成输入的字符串的颜色
 
 
-class CodeWidget(QsciScintilla):
+class Code(QsciScintilla):
 
     def __init__(self):
         super().__init__()
@@ -36,6 +36,7 @@ class CodeWidget(QsciScintilla):
         self.setAutoCompletionThreshold(1)  # 输入多少个字符才弹出补全提示
         self.setFolding(True)  # 代码可折叠
         self.setTabWidth(4)  # 设置缩进长度
+        self.setUtf8(True)  # 设置文档的编码格式为 “utf8”
         self.setIndentationGuides(True)  # 设置缩进参考线
         self.setAutoIndent(True)  # 设置自动缩进
         self.setCaretLineVisible(True)
@@ -44,21 +45,23 @@ class CodeWidget(QsciScintilla):
         self.setCaretLineVisible(True)  # 是否高亮显示光标所在行
         self.setCaretLineBackgroundColor(QtGui.QColor(250, 244, 217))  # 光标所在行的底色
         self.setIndentationsUseTabs(True)  # 设置使用Tabs缩进
-        self.setFont(QtGui.QFont('Consolas', 20))  # 设置默认字体
+        # self.setFont(QtGui.QFont('Consolas', 20))  # 设置默认字体
         self.setMarginType(0, self.NumberMargin)    # 0~4。第0个左边栏显示行号
-        self.setMarginLineNumbers(4, True)  # 我也不知道
-        self.setMarginsBackgroundColor(QtGui.QColor(120, 220, 180))  # 边栏背景颜色
-        self.setMarginWidth(0, 30)  # 边栏宽度
+        self.setMarginsBackgroundColor(QtGui.QColor(255, 255, 255))  # 边栏背景颜色
+        # self.setScrollWidthTracking(True)
+        # self.setScrollWidth(500)
+        self.setMarginWidth(0, 40)  # 边栏宽度
         self.setAutoIndent(True)  # 换行后自动缩进
-        self.setUtf8(True)  # 支持中文字符
         self.__api = QsciAPIs(self.lexer)
         for kw in keyword.kwlist:
             self.__api.add(kw)
         self.__api.prepare()
+        self.setText("#!/usr/bin/python \n# coding=utf-8\n# version: Python3\n# please edit your code here:\n")
+
 
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
-    mode_dilog = CodeWidget()
+    mode_dilog = Code()
     mode_dilog.show()
     sys.exit(app.exec_())

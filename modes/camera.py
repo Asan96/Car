@@ -7,6 +7,7 @@ import numpy as np
 import cv2
 import socket
 import threading
+import os
 
 import queue
 
@@ -63,8 +64,9 @@ class ImgServer(object):
         global photo, photo_flag, lastServer
         udp_server = self.set_server()
         lastServer = udp_server
-        faceCascade = cv2.CascadeClassifier('../static/cascade/haarcascade_frontalface_alt.xml')
-        eyesCascade = cv2.CascadeClassifier('../static/cascade/haarcascade_eye.xml')
+        app_path = os.getcwd()
+        faceCascade = cv2.CascadeClassifier(os.path.join(app_path, 'static/cascade/haarcascade_eye.xml'))
+        eyesCascade = cv2.CascadeClassifier(os.path.join(app_path, 'static/cascade/haarcascade_frontalface_alt.xml'))
         type_dic = {'eyes': faceCascade, 'face': faceCascade}
         RGBImg = ''
         while 1:
