@@ -68,7 +68,7 @@ border-top-color: rgb(255, 85, 127);
 </string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <property name="iconSize">
      <size>
@@ -812,8 +812,8 @@ QPushButton{background-color:rgb(85, 170, 127);border-radius:5px;color:#F2F2F2}<
      <widget class="QPushButton" name="btnRunLocal">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>2</y>
+        <x>510</x>
+        <y>0</y>
         <width>71</width>
         <height>31</height>
        </rect>
@@ -829,8 +829,8 @@ QPushButton{background-color:rgb(85, 170, 127);border-radius:5px;color:#F2F2F2}<
      <widget class="QPushButton" name="btnRunStop">
       <property name="geometry">
        <rect>
-        <x>230</x>
-        <y>2</y>
+        <x>720</x>
+        <y>0</y>
         <width>71</width>
         <height>31</height>
        </rect>
@@ -846,8 +846,8 @@ QPushButton{background-color:rgb(255, 0, 0);border-radius:5px;color:#F2F2F2}</st
      <widget class="QPushButton" name="btnCodeImport">
       <property name="geometry">
        <rect>
-        <x>330</x>
-        <y>2</y>
+        <x>820</x>
+        <y>0</y>
         <width>71</width>
         <height>31</height>
        </rect>
@@ -863,8 +863,8 @@ QPushButton{background-color:rgb(255, 85, 0);border-radius:5px;color:#F2F2F2}</s
      <widget class="QPushButton" name="btnCodeSave">
       <property name="geometry">
        <rect>
-        <x>430</x>
-        <y>2</y>
+        <x>920</x>
+        <y>0</y>
         <width>71</width>
         <height>31</height>
        </rect>
@@ -880,8 +880,8 @@ QPushButton{background-color:#01AAED;border-radius:5px;color:#F2F2F2}</string>
      <widget class="QPushButton" name="btnRunDevice">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>2</y>
+        <x>610</x>
+        <y>0</y>
         <width>71</width>
         <height>31</height>
        </rect>
@@ -920,7 +920,7 @@ QPushButton{background-color:rgb(88, 177, 0);border-radius:5px;color:#F2F2F2}</s
        <rect>
         <x>-10</x>
         <y>30</y>
-        <width>1011</width>
+        <width>1021</width>
         <height>431</height>
        </rect>
       </property>

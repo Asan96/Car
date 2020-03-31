@@ -267,27 +267,27 @@ class Ui_tankWindow(object):
         self.tab_code = QtWidgets.QWidget()
         self.tab_code.setObjectName("tab_code")
         self.btnRunLocal = QtWidgets.QPushButton(self.tab_code)
-        self.btnRunLocal.setGeometry(QtCore.QRect(20, 2, 71, 31))
+        self.btnRunLocal.setGeometry(QtCore.QRect(510, 0, 71, 31))
         self.btnRunLocal.setStyleSheet("QPushButton:hover{background-color:rgb(85, 170, 0);color:#F8F8F8} \n"
 "QPushButton{background-color:rgb(85, 170, 127);border-radius:5px;color:#F2F2F2}")
         self.btnRunLocal.setObjectName("btnRunLocal")
         self.btnRunStop = QtWidgets.QPushButton(self.tab_code)
-        self.btnRunStop.setGeometry(QtCore.QRect(230, 2, 71, 31))
+        self.btnRunStop.setGeometry(QtCore.QRect(720, 0, 71, 31))
         self.btnRunStop.setStyleSheet("QPushButton:hover{background-color:rgb(255, 48, 68);color:#F8F8F8} \n"
 "QPushButton{background-color:rgb(255, 0, 0);border-radius:5px;color:#F2F2F2}")
         self.btnRunStop.setObjectName("btnRunStop")
         self.btnCodeImport = QtWidgets.QPushButton(self.tab_code)
-        self.btnCodeImport.setGeometry(QtCore.QRect(330, 2, 71, 31))
+        self.btnCodeImport.setGeometry(QtCore.QRect(820, 0, 71, 31))
         self.btnCodeImport.setStyleSheet("QPushButton:hover{background-color:rgb(255, 129, 2);color:#F8F8F8} \n"
 "QPushButton{background-color:rgb(255, 85, 0);border-radius:5px;color:#F2F2F2}")
         self.btnCodeImport.setObjectName("btnCodeImport")
         self.btnCodeSave = QtWidgets.QPushButton(self.tab_code)
-        self.btnCodeSave.setGeometry(QtCore.QRect(430, 2, 71, 31))
+        self.btnCodeSave.setGeometry(QtCore.QRect(920, 0, 71, 31))
         self.btnCodeSave.setStyleSheet("QPushButton:hover{background-color:#1E9FFF;color:#F8F8F8} \n"
 "QPushButton{background-color:#01AAED;border-radius:5px;color:#F2F2F2}")
         self.btnCodeSave.setObjectName("btnCodeSave")
         self.btnRunDevice = QtWidgets.QPushButton(self.tab_code)
-        self.btnRunDevice.setGeometry(QtCore.QRect(120, 2, 71, 31))
+        self.btnRunDevice.setGeometry(QtCore.QRect(610, 0, 71, 31))
         self.btnRunDevice.setStyleSheet("QPushButton:hover{background-color:rgb(0, 156, 0);color:#F8F8F8} \n"
 "QPushButton{background-color:rgb(88, 177, 0);border-radius:5px;color:#F2F2F2}")
         self.btnRunDevice.setObjectName("btnRunDevice")
@@ -301,7 +301,7 @@ class Ui_tankWindow(object):
         self.label_10.setFont(font)
         self.label_10.setObjectName("label_10")
         self.CodeWidget = QtWidgets.QWidget(self.tab_code)
-        self.CodeWidget.setGeometry(QtCore.QRect(-10, 30, 1011, 431))
+        self.CodeWidget.setGeometry(QtCore.QRect(-10, 30, 1021, 431))
         self.CodeWidget.setObjectName("CodeWidget")
         self.CodeConsoleText = QtWidgets.QTextBrowser(self.tab_code)
         self.CodeConsoleText.setGeometry(QtCore.QRect(0, 480, 1001, 181))
@@ -377,7 +377,7 @@ class Ui_tankWindow(object):
         self.toolBar.addAction(self.actionStatus)
 
         self.retranslateUi(tankWindow)
-        self.tabMenuWidget.setCurrentIndex(0)
+        self.tabMenuWidget.setCurrentIndex(3)
         QtCore.QMetaObject.connectSlotsByName(tankWindow)
 
     def retranslateUi(self, tankWindow):
