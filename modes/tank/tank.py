@@ -31,6 +31,7 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
         self.setupUi(self)
         self.avoid.clicked.connect(self.avoid_follow)
         self.travel.clicked.connect(self.avoid_follow)
+        self.follow.clicked.connect(self.avoid_follow)
         self.keyboard_control.clicked.connect(self.keyboard_move)
         self.car_backward.clicked.connect(self.car_move)
         self.car_forward.clicked.connect(self.car_move)
