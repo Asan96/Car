@@ -204,7 +204,7 @@ class Ui_tankWindow(object):
         self.voice_text_composite.setObjectName("voice_text_composite")
         self.voice_text_chat = QtWidgets.QPushButton(self.tab_voice)
         self.voice_text_chat.setGeometry(QtCore.QRect(780, 480, 81, 41))
-        self.voice_text_chat.setStyleSheet("font-family:\'微软雅黑\';font-size:14px;background-color:rgb(99, 180, 255);border-bottom-right-radius:5px;color:#F8F8F8")
+        self.voice_text_chat.setStyleSheet("font-family:\'微软雅黑\';font-size:14px;background-color:rgb(99, 180, 255);border-bottom-right-radius:5px;color:#F8F8F8;")
         self.voice_text_chat.setObjectName("voice_text_chat")
         self.label_6 = QtWidgets.QLabel(self.tab_voice)
         self.label_6.setGeometry(QtCore.QRect(150, 40, 501, 41))
@@ -409,7 +409,7 @@ class Ui_tankWindow(object):
         self.toolBar.addAction(self.actionStatus)
 
         self.retranslateUi(tankWindow)
-        self.tabMenuWidget.setCurrentIndex(3)
+        self.tabMenuWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(tankWindow)
 
     def retranslateUi(self, tankWindow):

@@ -68,7 +68,7 @@ border-top-color: rgb(255, 85, 127);
 </string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>1</number>
     </property>
     <property name="iconSize">
      <size>
@@ -589,7 +589,7 @@ border-top-color: rgb(255, 85, 127);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family:'微软雅黑';font-size:14px;background-color:rgb(99, 180, 255);border-bottom-right-radius:5px;color:#F8F8F8</string>
+       <string notr="true">font-family:'微软雅黑';font-size:14px;background-color:rgb(99, 180, 255);border-bottom-right-radius:5px;color:#F8F8F8;</string>
       </property>
       <property name="text">
        <string>文字对话</string>

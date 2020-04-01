@@ -16,6 +16,7 @@ from datetime import datetime
 from __init__ import camera_background_path, pyfile_path
 from interface import _write, _read
 from modes.tank.code import Code
+from ui.tankStructionDialog import Ui_structionWidget
 
 """
 主窗口
@@ -93,6 +94,13 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
         # self.follow.setStyleSheet("QCheckBox::indicator{width: 50px;height: 30px;}"
         #                           "QCheckBox::indicator::unchecked {image:url(:/tank/icon/checkbox_checked.png);}"
         #                           "QCheckBox::indicator::checked { image:url(:/tank/icon/checkbox_unchecked.png);}")
+        self.structionWindow = StructionDialog()
+        self.actionInfo.triggered.connect(self.structionDialog)
+
+
+    #说明窗口弹出
+    def structionDialog(self):
+        self.structionWindow.show()
 
     '''代码编辑器'''
     # 本地运行 需安装 Python3
@@ -277,6 +285,12 @@ class DialogConnect(QtWidgets.QDialog, Ui_dialog_connect):
     # 连接输入框清空
     def clear_mac_input(self):
         self.input_macId.setText('')
+
+
+class StructionDialog(QtWidgets.QWidget, Ui_structionWidget):
+    def __init__(self):
+        super(StructionDialog, self).__init__()
+        self.setupUi(self)
 
 
 def main():
