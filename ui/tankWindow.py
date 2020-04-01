@@ -269,7 +269,7 @@ class Ui_tankWindow(object):
         self.btnRunLocal = QtWidgets.QPushButton(self.tab_code)
         self.btnRunLocal.setGeometry(QtCore.QRect(700, 450, 100, 31))
         self.btnRunLocal.setStyleSheet("QPushButton:hover{background-color:rgb(0, 156, 0);color:#F8F8F8} \n"
-"QPushButton{background-color:rgb(88, 177, 0);color:#F2F2F2;border:0}")
+"QPushButton{background-color:rgb(88, 177, 0);color:#F2F2F2;border:0;border-right:1px solid #DDDDDD}")
         self.btnRunLocal.setObjectName("btnRunLocal")
         self.btnRunStop = QtWidgets.QPushButton(self.tab_code)
         self.btnRunStop.setGeometry(QtCore.QRect(900, 450, 100, 31))
@@ -279,18 +279,18 @@ class Ui_tankWindow(object):
         self.btnCodeImport = QtWidgets.QPushButton(self.tab_code)
         self.btnCodeImport.setGeometry(QtCore.QRect(500, 450, 100, 31))
         self.btnCodeImport.setStyleSheet("QPushButton:hover{background-color:rgb(85, 170, 0);color:#F8F8F8} \n"
-"QPushButton{background-color:rgb(85, 170, 127);color:#F2F2F2;border:0;}\n"
+"QPushButton{background-color:rgb(85, 170, 127);color:#F2F2F2;border:0;border-right:1px solid #DDDDDD}\n"
 "")
         self.btnCodeImport.setObjectName("btnCodeImport")
         self.btnCodeSave = QtWidgets.QPushButton(self.tab_code)
         self.btnCodeSave.setGeometry(QtCore.QRect(600, 450, 100, 31))
         self.btnCodeSave.setStyleSheet("QPushButton:hover{background-color:rgb(85, 170, 0);color:#F8F8F8} \n"
-"QPushButton{background-color:rgb(85, 170, 127);color:#F2F2F2;border:0}")
+"QPushButton{background-color:rgb(85, 170, 127);color:#F2F2F2;border:0;border-right:1px solid #DDDDDD}")
         self.btnCodeSave.setObjectName("btnCodeSave")
         self.btnRunDevice = QtWidgets.QPushButton(self.tab_code)
         self.btnRunDevice.setGeometry(QtCore.QRect(800, 450, 100, 31))
         self.btnRunDevice.setStyleSheet("QPushButton:hover{background-color:rgb(0, 156, 0);color:#F8F8F8} \n"
-"QPushButton{background-color:rgb(88, 177, 0);color:#F2F2F2;border:0}")
+"QPushButton{background-color:rgb(88, 177, 0);color:#F2F2F2;border:0;border-right:1px solid #DDDDDD}")
         self.btnRunDevice.setObjectName("btnRunDevice")
         self.label_10 = QtWidgets.QLabel(self.tab_code)
         self.label_10.setGeometry(QtCore.QRect(10, 460, 71, 21))

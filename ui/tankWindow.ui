@@ -820,7 +820,7 @@ QPushButton{background-color:rgb(85, 170, 127);border-radius:5px;color:#F2F2F2}<
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton:hover{background-color:rgb(0, 156, 0);color:#F8F8F8} 
-QPushButton{background-color:rgb(88, 177, 0);color:#F2F2F2;border:0}</string>
+QPushButton{background-color:rgb(88, 177, 0);color:#F2F2F2;border:0;border-right:1px solid #DDDDDD}</string>
       </property>
       <property name="text">
        <string>本地运行</string>
@@ -854,7 +854,7 @@ QPushButton{background-color:rgb(255, 48, 68);color:#F2F2F2;border:0}</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton:hover{background-color:rgb(85, 170, 0);color:#F8F8F8} 
-QPushButton{background-color:rgb(85, 170, 127);color:#F2F2F2;border:0;}
+QPushButton{background-color:rgb(85, 170, 127);color:#F2F2F2;border:0;border-right:1px solid #DDDDDD}
 </string>
       </property>
       <property name="text">
@@ -872,7 +872,7 @@ QPushButton{background-color:rgb(85, 170, 127);color:#F2F2F2;border:0;}
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton:hover{background-color:rgb(85, 170, 0);color:#F8F8F8} 
-QPushButton{background-color:rgb(85, 170, 127);color:#F2F2F2;border:0}</string>
+QPushButton{background-color:rgb(85, 170, 127);color:#F2F2F2;border:0;border-right:1px solid #DDDDDD}</string>
       </property>
       <property name="text">
        <string>保存</string>
@@ -889,7 +889,7 @@ QPushButton{background-color:rgb(85, 170, 127);color:#F2F2F2;border:0}</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton:hover{background-color:rgb(0, 156, 0);color:#F8F8F8} 
-QPushButton{background-color:rgb(88, 177, 0);color:#F2F2F2;border:0}</string>
+QPushButton{background-color:rgb(88, 177, 0);color:#F2F2F2;border:0;border-right:1px solid #DDDDDD}</string>
       </property>
       <property name="text">
        <string>设备运行</string>

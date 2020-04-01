@@ -81,10 +81,10 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
 
         self.tabMenuWidget.setStyleSheet("QTabWidget::pane{border: 1px;background-color:white;position: absolute;}"
                                          "QTabWidget::tab-bar{subcontrol-position:left;alignment: center;}"
-                                         "QTabBar::tab{min-width:250px;min-height:35px;"
+                                         "QTabBar::tab{min-width:249px;min-height:35px;"
                                          "font-weight:bold;}"
-                                         "QTabBar::tab:selected {color: white;background-color:#5FB878;}"
-                                         "QTabBar::tab:!selected{color: white;background-color:#393D49}"
+                                         "QTabBar::tab:selected {color: white;background-color:#5FB878;border-right:1px solid gray}"
+                                         "QTabBar::tab:!selected{color: white;background-color:#393D49;border-right:1px solid gray}"
                                          "QTabBar::tab:hover{color: #FF6633;}")
         self.tabMenuWidget.setAutoFillBackground(True)
         palette = QPalette()
