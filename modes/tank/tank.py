@@ -82,7 +82,7 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
         self.tabMenuWidget.setStyleSheet("QTabWidget::pane{border: 1px;background-color:white;position: absolute;}"
                                          "QTabWidget::tab-bar{subcontrol-position:left;alignment: center;}"
                                          "QTabBar::tab{min-width:249px;min-height:35px;"
-                                         "font-weight:bold;}"
+                                         "font-weight:bold;font-family:'微软雅黑'}"
                                          "QTabBar::tab:selected {color: white;background-color:#5FB878;border-right:1px solid gray}"
                                          "QTabBar::tab:!selected{color: white;background-color:#393D49;border-right:1px solid gray}"
                                          "QTabBar::tab:hover{color: #FF6633;}")
@@ -90,7 +90,9 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
         palette = QPalette()
         palette.setColor(QPalette.Window, Qt.white)
         self.tabMenuWidget.setPalette(palette)
-
+        # self.follow.setStyleSheet("QCheckBox::indicator{width: 50px;height: 30px;}"
+        #                           "QCheckBox::indicator::unchecked {image:url(:/tank/icon/checkbox_checked.png);}"
+        #                           "QCheckBox::indicator::checked { image:url(:/tank/icon/checkbox_unchecked.png);}")
 
     '''代码编辑器'''
     # 本地运行 需安装 Python3
