@@ -812,15 +812,15 @@ QPushButton{background-color:rgb(85, 170, 127);border-radius:5px;color:#F2F2F2}<
      <widget class="QPushButton" name="btnRunLocal">
       <property name="geometry">
        <rect>
-        <x>510</x>
-        <y>0</y>
-        <width>71</width>
+        <x>700</x>
+        <y>450</y>
+        <width>100</width>
         <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton:hover{background-color:rgb(85, 170, 0);color:#F8F8F8} 
-QPushButton{background-color:rgb(85, 170, 127);border-radius:5px;color:#F2F2F2}</string>
+       <string notr="true">QPushButton:hover{background-color:rgb(0, 156, 0);color:#F8F8F8} 
+QPushButton{background-color:rgb(88, 177, 0);color:#F2F2F2;border:0}</string>
       </property>
       <property name="text">
        <string>本地运行</string>
@@ -829,15 +829,15 @@ QPushButton{background-color:rgb(85, 170, 127);border-radius:5px;color:#F2F2F2}<
      <widget class="QPushButton" name="btnRunStop">
       <property name="geometry">
        <rect>
-        <x>720</x>
-        <y>0</y>
-        <width>71</width>
+        <x>900</x>
+        <y>450</y>
+        <width>100</width>
         <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton:hover{background-color:rgb(255, 48, 68);color:#F8F8F8} 
-QPushButton{background-color:rgb(255, 0, 0);border-radius:5px;color:#F2F2F2}</string>
+       <string notr="true">QPushButton:hover{background-color:rgb(255, 0, 0);color:#F8F8F8} 
+QPushButton{background-color:rgb(255, 48, 68);color:#F2F2F2;border:0}</string>
       </property>
       <property name="text">
        <string>停止</string>
@@ -846,15 +846,16 @@ QPushButton{background-color:rgb(255, 0, 0);border-radius:5px;color:#F2F2F2}</st
      <widget class="QPushButton" name="btnCodeImport">
       <property name="geometry">
        <rect>
-        <x>820</x>
-        <y>0</y>
-        <width>71</width>
+        <x>500</x>
+        <y>450</y>
+        <width>100</width>
         <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton:hover{background-color:rgb(255, 129, 2);color:#F8F8F8} 
-QPushButton{background-color:rgb(255, 85, 0);border-radius:5px;color:#F2F2F2}</string>
+       <string notr="true">QPushButton:hover{background-color:rgb(85, 170, 0);color:#F8F8F8} 
+QPushButton{background-color:rgb(85, 170, 127);color:#F2F2F2;border:0;}
+</string>
       </property>
       <property name="text">
        <string>导入</string>
@@ -863,15 +864,15 @@ QPushButton{background-color:rgb(255, 85, 0);border-radius:5px;color:#F2F2F2}</s
      <widget class="QPushButton" name="btnCodeSave">
       <property name="geometry">
        <rect>
-        <x>920</x>
-        <y>0</y>
-        <width>71</width>
+        <x>600</x>
+        <y>450</y>
+        <width>100</width>
         <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton:hover{background-color:#1E9FFF;color:#F8F8F8} 
-QPushButton{background-color:#01AAED;border-radius:5px;color:#F2F2F2}</string>
+       <string notr="true">QPushButton:hover{background-color:rgb(85, 170, 0);color:#F8F8F8} 
+QPushButton{background-color:rgb(85, 170, 127);color:#F2F2F2;border:0}</string>
       </property>
       <property name="text">
        <string>保存</string>
@@ -880,15 +881,15 @@ QPushButton{background-color:#01AAED;border-radius:5px;color:#F2F2F2}</string>
      <widget class="QPushButton" name="btnRunDevice">
       <property name="geometry">
        <rect>
-        <x>610</x>
-        <y>0</y>
-        <width>71</width>
+        <x>800</x>
+        <y>450</y>
+        <width>100</width>
         <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton:hover{background-color:rgb(0, 156, 0);color:#F8F8F8} 
-QPushButton{background-color:rgb(88, 177, 0);border-radius:5px;color:#F2F2F2}</string>
+QPushButton{background-color:rgb(88, 177, 0);color:#F2F2F2;border:0}</string>
       </property>
       <property name="text">
        <string>设备运行</string>
@@ -919,9 +920,9 @@ QPushButton{background-color:rgb(88, 177, 0);border-radius:5px;color:#F2F2F2}</s
       <property name="geometry">
        <rect>
         <x>-10</x>
-        <y>30</y>
+        <y>-10</y>
         <width>1021</width>
-        <height>431</height>
+        <height>471</height>
        </rect>
       </property>
      </widget>
@@ -979,7 +980,7 @@ QPushButton{background-color:rgb(88, 177, 0);border-radius:5px;color:#F2F2F2}</s
     <string>toolBar</string>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(175, 193, 255);color:rgb(66, 66, 66);</string>
+    <string notr="true">background-color:rgb(255, 255, 255);color:rgb(66, 66, 66);border-bottom:none;</string>
    </property>
    <property name="movable">
     <bool>false</bool>
@@ -999,7 +1000,6 @@ QPushButton{background-color:rgb(88, 177, 0);border-radius:5px;color:#F2F2F2}</s
    <addaction name="separator"/>
    <addaction name="actionLogin"/>
    <addaction name="actionChange"/>
-   <addaction name="actionExit"/>
    <addaction name="actionInfo"/>
    <addaction name="actionText"/>
    <addaction name="actionStatus"/>

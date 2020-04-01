@@ -5,7 +5,7 @@ import queue
 from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtWidgets import QMainWindow, QTextEdit, QAction, QApplication
 from PyQt5.QtCore import QFileInfo, Qt
-from PyQt5.QtGui import QIcon
+from PyQt5.QtGui import QIcon, QPalette
 from ui.tankWindow import Ui_tankWindow
 from PyQt5.QtWidgets import QMessageBox, QFileDialog
 from ui.connectDialog import Ui_dialog_connect
@@ -67,7 +67,6 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
         self.actionLogin.setIcon(QIcon(root+'/icon/connect.ico'))
         self.actionChange.setIcon(QIcon(root+'/icon/change.ico'))
         self.actionInfo.setIcon(QIcon(root+'/icon/info.ico'))
-        self.actionExit.setIcon(QIcon(root+'/icon/disconnect.ico'))
         self.loginWindow.btn_connect.clicked.connect(self.login_status)
         self._lyt = QtWidgets.QVBoxLayout()
         self._code = Code()
@@ -80,85 +79,19 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
         self.btnCodeImport.clicked.connect(self.code_import)
         self.btnCodeSave.clicked.connect(self.code_save)
 
-        self.tabMenuWidget.setStyleSheet("QTabWidget::pane{border:1px rgb(48, 104, 151) solid;\
-                                            border-style: outset;background-color: rgb(255,255 , 255);\
-                                            background: transparent;} \
-        QTabWidget::tab-bar{border-width:0px;}\
-        QTabBar::tab{border-bottom-color: #DCDCDC;\
-                     border-top-left-radius: 0px;\
-                     border-top-right-radius: 0px;\
-                     max-width: 75px; min-width:75px; min-height:30px;\
-                     font:15px Times New Roman;\
-                         padding: 0px;\
-                         }\
-        QTabBar::scroller {\
-                           width:25;\
-                               border:0;\
-                                   padding: 0px;\
-                                   }\
-        QTabBar QToolButton::right-arrow {\
-                                          background-color:#FF7F50	;\
-                                          border-width: 0;\
-                                      }\
-        QTabBar QToolButton::hover {\
-                                                background-color:rgb(132, 171, 208);\
-                                                border-width: 0;\
-                                            }\
-        QTabBar QToolButton::right-arrow:disabled {\
-                                                background-color:rgb(132, 171, 208);\
-                                                border-width: 0;\
-                                            }\
-        QTabBar QToolButton::left-arrow {\
-                                         background-color:rgb(132, 171, 208);\
-                                         border-width: 0;\
-                                     }\
-        QTabBar QToolButton::left-arrow:hover {\
-                                               background-color:rgb(132, 171, 208);\
-                                               border-width: 0;\
-                                           }\
-        QTabBar QToolButton::left-arrow:disabled {\
-                                               background-color:rgb(132, 171, 208);\
-                                               border-width: 0;\
-                                           }\
-        QTabBar::tab:first:selected {\
-                                     margin-left: 0; margin-right: 0;\
-                                     color: #FF7F50;\
-                                     }\
-        QTabBar::tab:first:!selected {\
-                                      color: black;\
-                                          margin-left: 0; margin-right: 0;\
-                                      }\
-        QTabBar::tab:first:hover:!selected {\
-                                            color: black;\
-                                                margin-left: 0; margin-right: 0;\
-                                            }\
-        QTabBar::tab:middle:selected {\
-                                      margin-top: 0; margin-left: -15; margin-right: 8;\
-                                      color: #FF7F50;\
-                                      }\
-        QTabBar::tab:middle:!selected {\
-                                       color: black;\
-                                           margin-top: 0; margin-left: -15; margin-right: 8;\
-                                       }\
-        QTabBar::tab:middle:hover:!selected {\
-                                             color: black;\
-                                                 margin-top: 0; margin-left: -15; margin-right: 8;\
-                                             }\
-        QTabBar::tab:last:selected {\
-                                    margin-top: 0px; margin-left: -10px; margin-right: 0;\
-                                    color: #FF7F50;\
-                                    }\
-        QTabBar::tab:last:!selected {\
-                                     color: black;\
-                                         margin-top: 0; margin-left: -10px; margin-right: 0;\
-                                     }\
-        QTabBar::tab:last:hover:!selected {\
-                                           color: black;\
-                                               margin-top: 0; margin-left: -10px; margin-right: 0;\
-                                           }\
-        QTabBar::tab:only-one {\
-                               margin: 0;\
-                               }")
+        self.tabMenuWidget.setStyleSheet("QTabWidget::pane{border: 1px;background-color:white;position: absolute;}"
+                                         "QTabWidget::tab-bar{subcontrol-position:left;alignment: center;}"
+                                         "QTabBar::tab{min-width:250px;min-height:35px;"
+                                         "font-weight:bold;}"
+                                         "QTabBar::tab:selected {color: white;background-color:#5FB878;}"
+                                         "QTabBar::tab:!selected{color: white;background-color:#393D49}"
+                                         "QTabBar::tab:hover{color: #FF6633;}")
+        self.tabMenuWidget.setAutoFillBackground(True)
+        palette = QPalette()
+        palette.setColor(QPalette.Window, Qt.white)
+        self.tabMenuWidget.setPalette(palette)
+
+
     '''代码编辑器'''
     # 本地运行 需安装 Python3
     def run_local(self):

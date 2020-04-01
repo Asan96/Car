@@ -267,29 +267,30 @@ class Ui_tankWindow(object):
         self.tab_code = QtWidgets.QWidget()
         self.tab_code.setObjectName("tab_code")
         self.btnRunLocal = QtWidgets.QPushButton(self.tab_code)
-        self.btnRunLocal.setGeometry(QtCore.QRect(510, 0, 71, 31))
-        self.btnRunLocal.setStyleSheet("QPushButton:hover{background-color:rgb(85, 170, 0);color:#F8F8F8} \n"
-"QPushButton{background-color:rgb(85, 170, 127);border-radius:5px;color:#F2F2F2}")
+        self.btnRunLocal.setGeometry(QtCore.QRect(700, 450, 100, 31))
+        self.btnRunLocal.setStyleSheet("QPushButton:hover{background-color:rgb(0, 156, 0);color:#F8F8F8} \n"
+"QPushButton{background-color:rgb(88, 177, 0);color:#F2F2F2;border:0}")
         self.btnRunLocal.setObjectName("btnRunLocal")
         self.btnRunStop = QtWidgets.QPushButton(self.tab_code)
-        self.btnRunStop.setGeometry(QtCore.QRect(720, 0, 71, 31))
-        self.btnRunStop.setStyleSheet("QPushButton:hover{background-color:rgb(255, 48, 68);color:#F8F8F8} \n"
-"QPushButton{background-color:rgb(255, 0, 0);border-radius:5px;color:#F2F2F2}")
+        self.btnRunStop.setGeometry(QtCore.QRect(900, 450, 100, 31))
+        self.btnRunStop.setStyleSheet("QPushButton:hover{background-color:rgb(255, 0, 0);color:#F8F8F8} \n"
+"QPushButton{background-color:rgb(255, 48, 68);color:#F2F2F2;border:0}")
         self.btnRunStop.setObjectName("btnRunStop")
         self.btnCodeImport = QtWidgets.QPushButton(self.tab_code)
-        self.btnCodeImport.setGeometry(QtCore.QRect(820, 0, 71, 31))
-        self.btnCodeImport.setStyleSheet("QPushButton:hover{background-color:rgb(255, 129, 2);color:#F8F8F8} \n"
-"QPushButton{background-color:rgb(255, 85, 0);border-radius:5px;color:#F2F2F2}")
+        self.btnCodeImport.setGeometry(QtCore.QRect(500, 450, 100, 31))
+        self.btnCodeImport.setStyleSheet("QPushButton:hover{background-color:rgb(85, 170, 0);color:#F8F8F8} \n"
+"QPushButton{background-color:rgb(85, 170, 127);color:#F2F2F2;border:0;}\n"
+"")
         self.btnCodeImport.setObjectName("btnCodeImport")
         self.btnCodeSave = QtWidgets.QPushButton(self.tab_code)
-        self.btnCodeSave.setGeometry(QtCore.QRect(920, 0, 71, 31))
-        self.btnCodeSave.setStyleSheet("QPushButton:hover{background-color:#1E9FFF;color:#F8F8F8} \n"
-"QPushButton{background-color:#01AAED;border-radius:5px;color:#F2F2F2}")
+        self.btnCodeSave.setGeometry(QtCore.QRect(600, 450, 100, 31))
+        self.btnCodeSave.setStyleSheet("QPushButton:hover{background-color:rgb(85, 170, 0);color:#F8F8F8} \n"
+"QPushButton{background-color:rgb(85, 170, 127);color:#F2F2F2;border:0}")
         self.btnCodeSave.setObjectName("btnCodeSave")
         self.btnRunDevice = QtWidgets.QPushButton(self.tab_code)
-        self.btnRunDevice.setGeometry(QtCore.QRect(610, 0, 71, 31))
+        self.btnRunDevice.setGeometry(QtCore.QRect(800, 450, 100, 31))
         self.btnRunDevice.setStyleSheet("QPushButton:hover{background-color:rgb(0, 156, 0);color:#F8F8F8} \n"
-"QPushButton{background-color:rgb(88, 177, 0);border-radius:5px;color:#F2F2F2}")
+"QPushButton{background-color:rgb(88, 177, 0);color:#F2F2F2;border:0}")
         self.btnRunDevice.setObjectName("btnRunDevice")
         self.label_10 = QtWidgets.QLabel(self.tab_code)
         self.label_10.setGeometry(QtCore.QRect(10, 460, 71, 21))
@@ -301,7 +302,7 @@ class Ui_tankWindow(object):
         self.label_10.setFont(font)
         self.label_10.setObjectName("label_10")
         self.CodeWidget = QtWidgets.QWidget(self.tab_code)
-        self.CodeWidget.setGeometry(QtCore.QRect(-10, 30, 1021, 431))
+        self.CodeWidget.setGeometry(QtCore.QRect(-10, -10, 1021, 471))
         self.CodeWidget.setObjectName("CodeWidget")
         self.CodeConsoleText = QtWidgets.QTextBrowser(self.tab_code)
         self.CodeConsoleText.setGeometry(QtCore.QRect(0, 480, 1001, 181))
@@ -319,7 +320,7 @@ class Ui_tankWindow(object):
         self.toolBar.setEnabled(True)
         self.toolBar.setMinimumSize(QtCore.QSize(0, 0))
         self.toolBar.setMaximumSize(QtCore.QSize(1000, 40))
-        self.toolBar.setStyleSheet("background-color:rgb(175, 193, 255);color:rgb(66, 66, 66);")
+        self.toolBar.setStyleSheet("background-color:rgb(255, 255, 255);color:rgb(66, 66, 66);border-bottom:none;")
         self.toolBar.setMovable(False)
         self.toolBar.setIconSize(QtCore.QSize(24, 24))
         self.toolBar.setObjectName("toolBar")
@@ -371,7 +372,6 @@ class Ui_tankWindow(object):
         self.toolBar.addSeparator()
         self.toolBar.addAction(self.actionLogin)
         self.toolBar.addAction(self.actionChange)
-        self.toolBar.addAction(self.actionExit)
         self.toolBar.addAction(self.actionInfo)
         self.toolBar.addAction(self.actionText)
         self.toolBar.addAction(self.actionStatus)
