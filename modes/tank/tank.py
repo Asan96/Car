@@ -1,6 +1,7 @@
 import sys
 import subprocess
 import queue
+import os
 
 from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtWidgets import QMainWindow, QTextEdit, QAction, QApplication
@@ -30,7 +31,7 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
     def __init__(self):
         super(TankWindow, self).__init__()
         self.setupUi(self)
-        self.root_path = QFileInfo(__file__).absolutePath()
+        self.root_path = os.getcwd()
         self.avoid.clicked.connect(self.avoid_follow)
         self.travel.clicked.connect(self.avoid_follow)
         self.follow.clicked.connect(self.avoid_follow)
@@ -45,16 +46,16 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
         self.car_cam_up.clicked.connect(self.car_move)
         self.car_cam_left.clicked.connect(self.car_move)
         self.car_cam_right.clicked.connect(self.car_move)
-        self.car_right.setIcon(QIcon(self.root_path+'/icon/left.ico'))
-        self.car_left.setIcon(QIcon(self.root_path+'/icon/right.ico'))
-        self.car_forward.setIcon(QIcon(self.root_path+'/icon/up.ico'))
-        self.car_backward.setIcon(QIcon(self.root_path+'/icon/down.ico'))
-        self.car_stop.setIcon(QIcon(self.root_path+'/icon/stop.ico'))
-        self.car_rotate.setIcon(QIcon(self.root_path+'/icon/rotate.ico'))
-        self.car_cam_left.setIcon(QIcon(self.root_path+'/icon/right.ico'))
-        self.car_cam_right.setIcon(QIcon(self.root_path + '/icon/left.ico'))
-        self.car_cam_up.setIcon(QIcon(self.root_path + '/icon/down.ico'))
-        self.car_cam_down.setIcon(QIcon(self.root_path + '/icon/up.ico'))
+        self.car_right.setIcon(QIcon(self.root_path+'/modes/tank/icon/left.ico'))
+        self.car_left.setIcon(QIcon(self.root_path+'/modes/tank/icon/right.ico'))
+        self.car_forward.setIcon(QIcon(self.root_path+'/modes/tank/icon/up.ico'))
+        self.car_backward.setIcon(QIcon(self.root_path+'/modes/tank/icon/down.ico'))
+        self.car_stop.setIcon(QIcon(self.root_path+'/modes/tank/icon/stop.ico'))
+        self.car_rotate.setIcon(QIcon(self.root_path+'/modes/tank/icon/rotate.ico'))
+        self.car_cam_left.setIcon(QIcon(self.root_path+'/modes/tank/icon/right.ico'))
+        self.car_cam_right.setIcon(QIcon(self.root_path + '/modes/tank/icon/left.ico'))
+        self.car_cam_up.setIcon(QIcon(self.root_path + '/modes/tank/icon/down.ico'))
+        self.car_cam_down.setIcon(QIcon(self.root_path + '/modes/tank/icon/up.ico'))
 
         self.background = QtGui.QPixmap(camera_background_path)
         self.background_camera = QtGui.QPixmap(camera_background_path2)
@@ -76,9 +77,9 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
         self.loginWindow = DialogConnect()
         self.actionLogin.triggered.connect(self.loginDialog)
         self.toolBar.setToolButtonStyle(Qt.ToolButtonTextBesideIcon)  # 文字图片水平排列
-        self.actionLogin.setIcon(QIcon(self.root_path+'/icon/connect.ico'))
-        self.actionChange.setIcon(QIcon(self.root_path+'/icon/change.ico'))
-        self.actionInfo.setIcon(QIcon(self.root_path+'/icon/info.ico'))
+        self.actionLogin.setIcon(QIcon(self.root_path+'/modes/tank/icon/connect.ico'))
+        self.actionChange.setIcon(QIcon(self.root_path+'/modes/tank/icon/change.ico'))
+        self.actionInfo.setIcon(QIcon(self.root_path+'/modes/tank/icon/info.ico'))
         self.loginWindow.btn_connect.clicked.connect(self.login_status)
         self._lyt = QtWidgets.QVBoxLayout()
         self._code = Code()

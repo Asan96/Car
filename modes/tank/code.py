@@ -1,10 +1,9 @@
 from PyQt5.Qsci import QsciScintilla, QsciLexerPython, QsciAPIs
 from PyQt5 import QtWidgets, QtGui
-from ui.tankWindow import Ui_tankWindow
-from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QColor, QFont
 import keyword
 import sys
+from PyQt5 import QtPrintSupport
 
 
 class LexerPython(QsciLexerPython):
