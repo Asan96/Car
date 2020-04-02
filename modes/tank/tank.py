@@ -14,7 +14,7 @@ from modes.camera import ImgServer, open_camera_client, close_camera_client
 import threading
 from datetime import datetime
 from __init__ import camera_background_path, pyfile_path
-from interface import _write, _read
+from interface import _write, _read, load_config
 from modes.tank.code import Code
 from ui.tankStructionDialog import Ui_structionWidget
 
@@ -261,6 +261,10 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
         self.input_send_text.setText('')
 
     def video(self):
+        result = load_config()
+        if not result['ret'] or (result['ret'] and result['msg'] == ''):
+            QMessageBox.warning(self, "警告", "请先连接设备！", QMessageBox.Yes, QMessageBox.Yes)
+            return
         str_type = self.sender().objectName().split('_')[-1]
         print(str_type)
         if str_type == 'close':
