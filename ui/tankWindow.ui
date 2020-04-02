@@ -144,17 +144,26 @@ border-top-color: rgb(255, 85, 127);
      <widget class="QPushButton" name="car_backward">
       <property name="geometry">
        <rect>
-        <x>770</x>
-        <y>220</y>
-        <width>61</width>
-        <height>51</height>
+        <x>760</x>
+        <y>210</y>
+        <width>60</width>
+        <height>60</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string>向后（D）</string>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color:rgb(99, 180, 255);color:rgb(243, 243, 243);border-bottom-left-radius:5px;border-bottom-right-radius:5px;font-size:14px;font-weight:500;font-family:'微软雅黑';</string>
+       <string notr="true">QPushButton{background-color:rgb(255,255,255);color:rgb(243, 243, 243);border-radius:5px;font-size:14px;font-weight:500;font-family:'微软雅黑';}</string>
       </property>
       <property name="text">
-       <string>后退</string>
+       <string/>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
       </property>
      </widget>
      <widget class="QCheckBox" name="keyboard_control">
@@ -199,39 +208,60 @@ border-top-color: rgb(255, 85, 127);
       <property name="geometry">
        <rect>
         <x>900</x>
-        <y>120</y>
-        <width>61</width>
-        <height>51</height>
+        <y>110</y>
+        <width>60</width>
+        <height>60</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string>旋转（Q）</string>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color:rgb(3, 198, 176);color:rgb(243, 243, 243);border-radius:5px;font-size:14px;font-weight:500;font-family:'微软雅黑';</string>
+       <string notr="true">QPushButton{background-color:white;color:rgb(243, 243, 243);border-radius:5px;font-size:14px;font-weight:500;font-family:'微软雅黑';}</string>
       </property>
       <property name="text">
-       <string>旋转</string>
+       <string/>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
       </property>
      </widget>
      <widget class="QPushButton" name="car_right">
       <property name="geometry">
        <rect>
-        <x>710</x>
-        <y>170</y>
-        <width>61</width>
-        <height>51</height>
+        <x>700</x>
+        <y>160</y>
+        <width>60</width>
+        <height>60</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string>向左（A）</string>
+      </property>
+      <property name="whatsThis">
+       <string extracomment="A"/>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color:rgb(99, 180, 255);color:rgb(243, 243, 243);border-top-left-radius:5px;border-bottom-left-radius:5px;font-size:14px;font-weight:500;font-family:'微软雅黑';</string>
+       <string notr="true">QPushButton{background-color:rgb(255,255,255);color:rgb(243, 243, 243);border-radius:5px;font-size:14px;font-weight:500;font-family:'微软雅黑';}</string>
       </property>
       <property name="text">
-       <string>向左</string>
+       <string/>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
       </property>
      </widget>
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
         <x>800</x>
-        <y>60</y>
+        <y>50</y>
         <width>91</width>
         <height>41</height>
        </rect>
@@ -240,10 +270,12 @@ border-top-color: rgb(255, 85, 127);
        <font>
         <family>微软雅黑</family>
         <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color:rgb(85, 170, 255);font-family:'微软雅黑';</string>
+       <string notr="true">color:rgb(85, 170, 255);font-family:'微软雅黑';font-weight:bold;</string>
       </property>
       <property name="text">
        <string>行动控制</string>
@@ -253,51 +285,78 @@ border-top-color: rgb(255, 85, 127);
       <property name="geometry">
        <rect>
         <x>870</x>
-        <y>420</y>
-        <width>61</width>
-        <height>51</height>
+        <y>410</y>
+        <width>60</width>
+        <height>60</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string>向右</string>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color:#01AAED;color:#F3F3F3;border-top-right-radius:5px;border-bottom-right-radius:5px;font-size:14px;font-weight:500;font-family:'微软雅黑';</string>
+       <string notr="true">QPushButton{background-color:white;color:#F3F3F3;border-top-right-radius:5px;border-bottom-right-radius:5px;font-size:14px;font-weight:500;font-family:'微软雅黑';}</string>
       </property>
       <property name="text">
-       <string>向右</string>
+       <string/>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
       </property>
      </widget>
      <widget class="QPushButton" name="car_forward">
       <property name="geometry">
        <rect>
-        <x>770</x>
-        <y>120</y>
-        <width>61</width>
-        <height>51</height>
+        <x>760</x>
+        <y>110</y>
+        <width>60</width>
+        <height>60</height>
        </rect>
+      </property>
+      <property name="toolTip">
+       <string>前进(W)</string>
       </property>
       <property name="whatsThis">
        <string extracomment="go_front"/>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color:rgb(99, 180, 255);color:rgb(243, 243, 243);border-top-left-radius:5px;border-top-right-radius:5px;font-size:14px;font-weight:500;font-family:'微软雅黑';</string>
+       <string notr="true">QPushButton{background-color:rgb(255,255,255);color:rgb(243, 243, 243);border-radius:5px;font-size:14px;font-weight:500;font-family:'微软雅黑';}</string>
       </property>
       <property name="text">
-       <string>前进</string>
+       <string/>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
       </property>
      </widget>
      <widget class="QPushButton" name="car_cam_down">
       <property name="geometry">
        <rect>
         <x>810</x>
-        <y>370</y>
-        <width>61</width>
-        <height>51</height>
+        <y>360</y>
+        <width>60</width>
+        <height>60</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string>向上</string>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color:#01AAED;color:#F3F3F3;border-top-left-radius:5px;border-top-right-radius:5px;font-size:14px;font-weight:500;font-family:'微软雅黑';</string>
+       <string notr="true">QPushButton{background-color:white;color:#F3F3F3;border-top-left-radius:5px;border-top-right-radius:5px;font-size:14px;font-weight:500;font-family:'微软雅黑';}</string>
       </property>
       <property name="text">
-       <string>向上</string>
+       <string/>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
       </property>
      </widget>
      <widget class="QLabel" name="label">
@@ -328,32 +387,50 @@ border-top-color: rgb(255, 85, 127);
       <property name="geometry">
        <rect>
         <x>900</x>
-        <y>220</y>
-        <width>61</width>
-        <height>51</height>
+        <y>210</y>
+        <width>60</width>
+        <height>60</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string>停止（E）</string>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color:rgb(255, 85, 0);color:rgb(243, 243, 243);border-radius:5px;font-size:14px;font-weight:500;font-family:'微软雅黑';</string>
+       <string notr="true">QPushButton{background-color:white;color:rgb(243, 243, 243);border-radius:5px;font-size:14px;font-weight:500;font-family:'微软雅黑';}</string>
       </property>
       <property name="text">
-       <string>停止</string>
+       <string/>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
       </property>
      </widget>
      <widget class="QPushButton" name="car_cam_up">
       <property name="geometry">
        <rect>
         <x>810</x>
-        <y>470</y>
-        <width>61</width>
-        <height>51</height>
+        <y>460</y>
+        <width>60</width>
+        <height>60</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string>向下</string>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color:#01AAED;color:#F3F3F3;border-bottom-left-radius:5px;border-bottom-right-radius:5px;font-size:14px;font-weight:500;font-family:'微软雅黑';</string>
+       <string notr="true">QPushButton{background-color:white;color:#F3F3F3;border-bottom-left-radius:5px;border-bottom-right-radius:5px;font-size:14px;font-weight:500;font-family:'微软雅黑';}</string>
       </property>
       <property name="text">
-       <string>向下</string>
+       <string/>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
       </property>
      </widget>
      <widget class="QLabel" name="label_3">
@@ -393,10 +470,12 @@ border-top-color: rgb(255, 85, 127);
        <font>
         <family>微软雅黑</family>
         <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color:rgb(85, 170, 255);font-family:'微软雅黑';</string>
+       <string notr="true">color:rgb(85, 170, 255);font-family:'微软雅黑';font-weight:bold;</string>
       </property>
       <property name="text">
        <string>摄像头控制</string>
@@ -406,32 +485,50 @@ border-top-color: rgb(255, 85, 127);
       <property name="geometry">
        <rect>
         <x>750</x>
-        <y>420</y>
-        <width>61</width>
-        <height>51</height>
+        <y>410</y>
+        <width>60</width>
+        <height>60</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string>向左</string>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color:#01AAED;color:#F3F3F3;border-top-left-radius:5px;border-bottom-left-radius:5px;font-size:14px;font-weight:500;font-family:'微软雅黑';</string>
+       <string notr="true">QPushButton{background-color:white;color:#F3F3F3;border-top-left-radius:5px;border-bottom-left-radius:5px;font-size:14px;font-weight:500;font-family:'微软雅黑';}</string>
       </property>
       <property name="text">
-       <string>向左</string>
+       <string/>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
       </property>
      </widget>
      <widget class="QPushButton" name="car_left">
       <property name="geometry">
        <rect>
-        <x>830</x>
-        <y>170</y>
-        <width>61</width>
-        <height>51</height>
+        <x>820</x>
+        <y>160</y>
+        <width>60</width>
+        <height>60</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string>向右（D）</string>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color:rgb(99, 180, 255);color:rgb(243, 243, 243);border-top-right-radius:5px;border-bottom-right-radius:5px;font-size:14px;font-weight:500;font-family:'微软雅黑';</string>
+       <string notr="true">QPushButton{background-color:rgb(255,255,255);color:rgb(243, 243, 243);border-radius:5px;font-size:14px;font-weight:500;font-family:'微软雅黑';}</string>
       </property>
       <property name="text">
-       <string>向右</string>
+       <string/>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
       </property>
      </widget>
      <widget class="QLabel" name="label_9">
@@ -487,7 +584,7 @@ border-top-color: rgb(255, 85, 127);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color:#F2F2F2</string>
+       <string notr="true">background-color:white;</string>
       </property>
       <property name="text">
        <string/>
@@ -538,6 +635,15 @@ border-top-color: rgb(255, 85, 127);
       <property name="text">
        <string>开启</string>
       </property>
+      <property name="iconSize">
+       <size>
+        <width>48</width>
+        <height>48</height>
+       </size>
+      </property>
+      <property name="shortcut">
+       <string>Ctrl+S</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_voice">
@@ -557,7 +663,8 @@ border-top-color: rgb(255, 85, 127);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family:'微软雅黑';font-size:14px;background-color:rgb(99, 180, 255);border-radius:5px;color:#F8F8F8</string>
+       <string notr="true">QPushButton{font-family:'微软雅黑';font-size:14px;background-color:rgb(99, 180, 255);border-radius:5px;color:#F8F8F8}
+QPushButton:hover{background-color:#009688}</string>
       </property>
       <property name="text">
        <string>语音控制</string>
@@ -573,7 +680,8 @@ border-top-color: rgb(255, 85, 127);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family:'微软雅黑';font-size:14px;background-color:rgb(99, 180, 255);border-top-right-radius:5px;border-bottom-right-radius:5px;color:#F8F8F8</string>
+       <string notr="true">QPushButton{font-family:'微软雅黑';font-size:14px;background-color:rgb(99, 180, 255);border-top-right-radius:5px;border-bottom-right-radius:5px;color:#F8F8F8}
+QPushButton:hover{background-color:#009688}</string>
       </property>
       <property name="text">
        <string>语音合成</string>
@@ -589,7 +697,8 @@ border-top-color: rgb(255, 85, 127);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family:'微软雅黑';font-size:14px;background-color:rgb(99, 180, 255);border-bottom-right-radius:5px;color:#F8F8F8;</string>
+       <string notr="true">QPushButton{font-family:'微软雅黑';font-size:14px;background-color:rgb(99, 180, 255);border-bottom-right-radius:5px;color:#F8F8F8;}
+QPushButton:hover{background-color:#009688}</string>
       </property>
       <property name="text">
        <string>文字对话</string>
@@ -649,7 +758,8 @@ border-top-color: rgb(255, 85, 127);
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family:'微软雅黑';font-size:14px;background-color:rgb(99, 180, 255);border-radius:5px;color:#F8F8F8</string>
+       <string notr="true">QPushButton{font-family:'微软雅黑';font-size:14px;background-color:rgb(99, 180, 255);border-radius:5px;color:#F8F8F8;}
+QPushButton:hover{background-color:#009688}</string>
       </property>
       <property name="text">
        <string>语音对话</string>
@@ -723,7 +833,8 @@ background-color:white;font-family:'微软雅黑';</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family:'微软雅黑';font-size:14px;background-color:rgb(99, 180, 255);border-radius:5px;color:#F8F8F8</string>
+       <string notr="true">QPushButton{font-family:'微软雅黑';font-size:14px;background-color:rgb(99, 180, 255);border-radius:5px;color:#F8F8F8}
+QPushButton:hover{background-color:#009688}</string>
       </property>
       <property name="text">
        <string>录音</string>
@@ -761,7 +872,8 @@ background-color:white;font-family:'微软雅黑';</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family:'微软雅黑';font-size:14px;background-color:#FF0000;border-radius:5px;color:#F8F8F8</string>
+       <string notr="true">QPushButton{font-family:'微软雅黑';font-size:14px;background-color:#FF0000;border-radius:5px;color:#F8F8F8}
+QPushButton:hover{background-color:#FF5722}</string>
       </property>
       <property name="text">
        <string>停止录音</string>
@@ -777,7 +889,8 @@ background-color:white;font-family:'微软雅黑';</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family:'微软雅黑';font-size:14px;background-color:rgb(24, 157, 50);border-radius:5px;color:#F8F8F8</string>
+       <string notr="true">QPushButton{font-family:'微软雅黑';font-size:14px;background-color:rgb(24, 157, 50);border-radius:5px;color:#F8F8F8}
+QPushButton:hover{background-color:#5FB878}</string>
       </property>
       <property name="text">
        <string>播放</string>
@@ -798,8 +911,8 @@ background-color:white;font-family:'微软雅黑';</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton:hover{background-color:rgb(85, 170, 0);color:#F8F8F8} 
-QPushButton{background-color:rgb(85, 170, 127);border-bottom-left-radius:5px;color:#F2F2F2;border-right:1px solid #F8F8F8;font-family:'微软雅黑';font-size:14px;}</string>
+       <string notr="true">QPushButton:hover{background-color:#009688;color:#F8F8F8} 
+QPushButton{background-color:#1E9FFF;border-bottom-left-radius:5px;color:#F2F2F2;border-right:1px solid #F8F8F8;font-family:'微软雅黑';font-size:14px;border-top:1px solid #F8F8F8;}</string>
       </property>
       <property name="text">
        <string>原始画面</string>
@@ -815,8 +928,8 @@ QPushButton{background-color:rgb(85, 170, 127);border-bottom-left-radius:5px;col
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton:hover{background-color:rgb(85, 170, 0);color:#F8F8F8} 
-QPushButton{background-color:rgb(85, 170, 127);color:#F2F2F2;border-radius:0px;border-right:1px solid #F8F8F8;font-family:'微软雅黑';font-size:14px;}</string>
+       <string notr="true">QPushButton:hover{background-color:#009688;color:#F8F8F8} 
+QPushButton{background-color:#1E9FFF;color:#F2F2F2;border-radius:0px;border-right:1px solid #F8F8F8;font-family:'微软雅黑';font-size:14px;border-top:1px solid #F8F8F8;}</string>
       </property>
       <property name="text">
        <string>人脸识别</string>
@@ -832,8 +945,8 @@ QPushButton{background-color:rgb(85, 170, 127);color:#F2F2F2;border-radius:0px;b
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton:hover{background-color:rgb(85, 170, 0);color:#F8F8F8} 
-QPushButton{background-color:rgb(85, 170, 127);border-radius:0px;color:#F2F2F2;border-right:1px solid #F8F8F8;font-family:'微软雅黑';font-size:14px;}</string>
+       <string notr="true">QPushButton:hover{background-color:#009688;color:#F8F8F8} 
+QPushButton{background-color:#1E9FFF;border-radius:0px;color:#F2F2F2;border-right:1px solid #F8F8F8;font-family:'微软雅黑';font-size:14px;border-top:1px solid #F8F8F8;}</string>
       </property>
       <property name="text">
        <string>眼部识别</string>
@@ -849,8 +962,8 @@ QPushButton{background-color:rgb(85, 170, 127);border-radius:0px;color:#F2F2F2;b
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton:hover{background-color:rgb(85, 170, 0);color:#F8F8F8} 
-QPushButton{background-color:rgb(85, 170, 127);border-bottom-right-radius:5px;color:#F2F2F2;font-family:'微软雅黑';font-size:14px;}</string>
+       <string notr="true">QPushButton:hover{background-color:#009688;color:#F8F8F8} 
+QPushButton{background-color:#1E9FFF;border-bottom-right-radius:5px;color:#F2F2F2;font-family:'微软雅黑';font-size:14px;border-top:1px solid #F8F8F8;}</string>
       </property>
       <property name="text">
        <string>关闭</string>
@@ -866,7 +979,7 @@ QPushButton{background-color:rgb(85, 170, 127);border-bottom-right-radius:5px;co
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color:black;</string>
+       <string notr="true">background-color:white;</string>
       </property>
       <property name="text">
        <string/>

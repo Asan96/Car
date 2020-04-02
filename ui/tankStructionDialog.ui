@@ -6,42 +6,71 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>480</height>
+    <width>480</width>
+    <height>360</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>480</width>
+    <height>360</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>480</width>
+    <height>360</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>人工智能履带坦克使用说明</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:white;padding-top:30px;</string>
+   <string notr="true">background-color:white;padding-top:20px;font-family:'微软雅黑';</string>
   </property>
   <widget class="QTextBrowser" name="textBrowser">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>641</width>
-     <height>481</height>
+     <width>480</width>
+     <height>360</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>480</width>
+     <height>360</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>480</width>
+     <height>360</height>
+    </size>
    </property>
    <property name="font">
     <font>
      <family>微软雅黑</family>
-     <pointsize>-1</pointsize>
+     <pointsize>12</pointsize>
     </font>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
    <property name="styleSheet">
-    <string notr="true">font-family:'微软雅黑';font-size:16px;</string>
+    <string notr="true">border:0px;background-color:#rgb(245, 247, 237);</string>
    </property>
    <property name="html">
     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'微软雅黑'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'SimSun'; font-size:14pt;&quot;&gt;1、使用时需连接履带坦克。打开车上的开关，待树莓派启动后，点击登录输入车身的设备号进行连接，听到已连接提示即连接成功，可进行相应的功能操作。&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'SimSun'; font-size:14pt;&quot;&gt;2、打开键盘控制后，使用键盘的W（前进）、A（左转）、S（后退）、D（右转）、Q（旋转）、E（停止）来控制行动。&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'SimSun'; font-size:14pt;&quot;&gt;3、物体跟随采用的是摄像头对颜色和物体大小的识别。具体使用时，将一个蓝色的物块（暂时只支持蓝色，物块不要太小）放到小车前方，注意距离不要太近。物体跟随时需将摄像头相关的画面关闭。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'微软雅黑'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13pt; color:#383838;&quot;&gt;1、使用时需连接履带坦克。打开车上的开关，待树莓派启动后，点击登录输入车身的设备号进行连接，听到已连接提示即连接成功，可进行相应的功能操作。&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'SimSun'; font-size:13pt; color:#383838;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13pt; color:#383838;&quot;&gt;2、打开键盘控制后，使用键盘的&lt;/span&gt;&lt;span style=&quot; font-size:13pt; color:#ff5500;&quot;&gt;W（前进）、A（左转）、S（后退）、D（右转）、Q（旋转）、E（停止）&lt;/span&gt;&lt;span style=&quot; font-size:13pt; color:#383838;&quot;&gt;来控制行动。&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'SimSun'; font-size:13pt; color:#383838;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13pt; color:#383838;&quot;&gt;3、物体跟随采用的是摄像头对颜色和物体大小的识别。具体使用时，将一个蓝色的物块&lt;/span&gt;&lt;span style=&quot; font-size:13pt; color:#ee4c4f;&quot;&gt;（暂时只支持蓝色，物块不要太小）&lt;/span&gt;&lt;span style=&quot; font-size:13pt; color:#383838;&quot;&gt;放到小车前方，注意距离不要太近。物体跟随时需将摄像头相关的画面关闭。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
  </widget>

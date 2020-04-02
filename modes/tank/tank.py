@@ -4,7 +4,7 @@ import queue
 
 from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtWidgets import QMainWindow, QTextEdit, QAction, QApplication
-from PyQt5.QtCore import QFileInfo, Qt
+from PyQt5.QtCore import QFileInfo, Qt, QFile
 from PyQt5.QtGui import QIcon, QPalette
 from ui.tankWindow import Ui_tankWindow
 from PyQt5.QtWidgets import QMessageBox, QFileDialog
@@ -13,7 +13,7 @@ from modes.tank.mqtt import mqtt_send, connect_mqtt
 from modes.camera import ImgServer, open_camera_client, close_camera_client
 import threading
 from datetime import datetime
-from __init__ import camera_background_path, pyfile_path
+from __init__ import camera_background_path, pyfile_path, camera_background_path2
 from interface import _write, _read, load_config
 from modes.tank.code import Code
 from ui.tankStructionDialog import Ui_structionWidget
@@ -30,6 +30,7 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
     def __init__(self):
         super(TankWindow, self).__init__()
         self.setupUi(self)
+        self.root_path = QFileInfo(__file__).absolutePath()
         self.avoid.clicked.connect(self.avoid_follow)
         self.travel.clicked.connect(self.avoid_follow)
         self.follow.clicked.connect(self.avoid_follow)
@@ -44,9 +45,20 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
         self.car_cam_up.clicked.connect(self.car_move)
         self.car_cam_left.clicked.connect(self.car_move)
         self.car_cam_right.clicked.connect(self.car_move)
+        self.car_right.setIcon(QIcon(self.root_path+'/icon/left.ico'))
+        self.car_left.setIcon(QIcon(self.root_path+'/icon/right.ico'))
+        self.car_forward.setIcon(QIcon(self.root_path+'/icon/up.ico'))
+        self.car_backward.setIcon(QIcon(self.root_path+'/icon/down.ico'))
+        self.car_stop.setIcon(QIcon(self.root_path+'/icon/stop.ico'))
+        self.car_rotate.setIcon(QIcon(self.root_path+'/icon/rotate.ico'))
+        self.car_cam_left.setIcon(QIcon(self.root_path+'/icon/right.ico'))
+        self.car_cam_right.setIcon(QIcon(self.root_path + '/icon/left.ico'))
+        self.car_cam_up.setIcon(QIcon(self.root_path + '/icon/down.ico'))
+        self.car_cam_down.setIcon(QIcon(self.root_path + '/icon/up.ico'))
 
         self.background = QtGui.QPixmap(camera_background_path)
-        self.video_pannel.setPixmap(self.background)
+        self.background_camera = QtGui.QPixmap(camera_background_path2)
+        self.video_pannel.setPixmap(self.background_camera)
         self.origin_camera.setPixmap(self.background)
 
         self.camera_switch.clicked.connect(self.control_camera)
@@ -64,10 +76,9 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
         self.loginWindow = DialogConnect()
         self.actionLogin.triggered.connect(self.loginDialog)
         self.toolBar.setToolButtonStyle(Qt.ToolButtonTextBesideIcon)  # 文字图片水平排列
-        root = QFileInfo(__file__).absolutePath()
-        self.actionLogin.setIcon(QIcon(root+'/icon/connect.ico'))
-        self.actionChange.setIcon(QIcon(root+'/icon/change.ico'))
-        self.actionInfo.setIcon(QIcon(root+'/icon/info.ico'))
+        self.actionLogin.setIcon(QIcon(self.root_path+'/icon/connect.ico'))
+        self.actionChange.setIcon(QIcon(self.root_path+'/icon/change.ico'))
+        self.actionInfo.setIcon(QIcon(self.root_path+'/icon/info.ico'))
         self.loginWindow.btn_connect.clicked.connect(self.login_status)
         self._lyt = QtWidgets.QVBoxLayout()
         self._code = Code()
@@ -86,19 +97,20 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
                                          "font-weight:bold;font-family:'微软雅黑'}"
                                          "QTabBar::tab:selected {color: white;background-color:#5FB878;border-right:1px solid gray}"
                                          "QTabBar::tab:!selected{color: white;background-color:#393D49;border-right:1px solid gray}"
-                                         "QTabBar::tab:hover{color: #FF6633;}")
+                                         "QTabBar::tab:hover{color: #e2e2e2;background-color:#009688}")
         self.tabMenuWidget.setAutoFillBackground(True)
         palette = QPalette()
         palette.setColor(QPalette.Window, Qt.white)
         self.tabMenuWidget.setPalette(palette)
+        # self.checkedIconPath = self.root_path+'icon/checkbox_checked.png'
+        # self.uncheckedIconPath = self.root_path+'icon/checkbox_unchecked.png'
         # self.follow.setStyleSheet("QCheckBox::indicator{width: 50px;height: 30px;}"
-        #                           "QCheckBox::indicator::unchecked {image:url(:/tank/icon/checkbox_checked.png);}"
-        #                           "QCheckBox::indicator::checked { image:url(:/tank/icon/checkbox_unchecked.png);}")
+        #                           "QCheckBox::indicator::unchecked {image:url(:"+self.uncheckedIconPath+");}"
+        #                           "QCheckBox::indicator::checked {image:url(:"+self.checkedIconPath+");}")
         self.structionWindow = StructionDialog()
         self.actionInfo.triggered.connect(self.structionDialog)
 
-
-    #说明窗口弹出
+    # 说明窗口弹出
     def structionDialog(self):
         self.structionWindow.show()
 
@@ -147,8 +159,6 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
         if file_path:
             _write(file_path, self._code.text())
 
-
-
     # 小车连接
     def login_status(self):
         mac_id = self.loginWindow.input_macId.text()
@@ -162,8 +172,6 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
                 QMessageBox.information(self, "连接状态", result['msg'], QMessageBox.Yes, QMessageBox.Yes)
         else:
             QMessageBox.warning(self, "警告", "请输入格式正确的设备id！", QMessageBox.Yes, QMessageBox.Yes)
-
-
 
     def loginDialog(self):
         self.loginWindow.show()
