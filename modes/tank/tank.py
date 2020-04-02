@@ -102,11 +102,14 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
         palette = QPalette()
         palette.setColor(QPalette.Window, Qt.white)
         self.tabMenuWidget.setPalette(palette)
-        # self.checkedIconPath = self.root_path+'icon/checkbox_checked.png'
-        # self.uncheckedIconPath = self.root_path+'icon/checkbox_unchecked.png'
-        # self.follow.setStyleSheet("QCheckBox::indicator{width: 50px;height: 30px;}"
-        #                           "QCheckBox::indicator::unchecked {image:url(:"+self.uncheckedIconPath+");}"
-        #                           "QCheckBox::indicator::checked {image:url(:"+self.checkedIconPath+");}")
+        self.checkBoxStyle = '''QCheckBox::indicator{width: 40px;height: 40px;}
+                                QCheckBox::indicator::unchecked {image:url(:/icon/checkbox_unchecked.png);}
+                                QCheckBox::indicator::checked {image:url(:/icon/checkbox_checked.png);}'''
+        self.follow.setStyleSheet(self.checkBoxStyle)
+        self.avoid.setStyleSheet(self.checkBoxStyle)
+        self.keyboard_control.setStyleSheet(self.checkBoxStyle)
+        self.camera_switch.setStyleSheet(self.checkBoxStyle)
+        self.travel.setStyleSheet(self.checkBoxStyle)
         self.structionWindow = StructionDialog()
         self.actionInfo.triggered.connect(self.structionDialog)
 
@@ -165,7 +168,8 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
         if mac_id[4:6] == '03' and mac_id.isdigit():
             result = connect_mqtt(mac_id)
             if result['ret'] is True:
-                self.actionStatus.setText(self.loginWindow.input_macId.text())
+                self.actionStatus.setIconText(result['msg'])
+                self.actionText.setCheckable(True)
                 QMessageBox.information(self, "连接状态", "连接成功！", QMessageBox.Yes, QMessageBox.Yes)
                 self.loginWindow.close()
             else:

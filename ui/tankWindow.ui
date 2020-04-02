@@ -68,12 +68,12 @@ border-top-color: rgb(255, 85, 127);
 </string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <property name="iconSize">
      <size>
-      <width>24</width>
-      <height>24</height>
+      <width>48</width>
+      <height>48</height>
      </size>
     </property>
     <property name="elideMode">
@@ -101,10 +101,10 @@ border-top-color: rgb(255, 85, 127);
      <widget class="QCheckBox" name="avoid">
       <property name="geometry">
        <rect>
-        <x>70</x>
+        <x>520</x>
         <y>600</y>
         <width>81</width>
-        <height>21</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
@@ -114,28 +114,28 @@ border-top-color: rgb(255, 85, 127);
        </font>
       </property>
       <property name="text">
-       <string>开启</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>230</x>
-        <y>560</y>
+        <x>120</x>
+        <y>600</y>
         <width>91</width>
-        <height>41</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>微软雅黑</family>
-        <pointsize>-1</pointsize>
-        <weight>62</weight>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family:'微软雅黑';font-size:17px;font-weight:500;</string>
+       <string notr="true">font-family:'微软雅黑';font-weight:bold;color:#2F4056;</string>
       </property>
       <property name="text">
        <string>循迹模式</string>
@@ -169,10 +169,10 @@ border-top-color: rgb(255, 85, 127);
      <widget class="QCheckBox" name="keyboard_control">
       <property name="geometry">
        <rect>
-        <x>630</x>
-        <y>600</y>
+        <x>820</x>
+        <y>590</y>
         <width>81</width>
-        <height>21</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
@@ -182,7 +182,7 @@ border-top-color: rgb(255, 85, 127);
        </font>
       </property>
       <property name="text">
-       <string>开启</string>
+       <string/>
       </property>
      </widget>
      <widget class="QCheckBox" name="travel">
@@ -191,7 +191,7 @@ border-top-color: rgb(255, 85, 127);
         <x>240</x>
         <y>600</y>
         <width>81</width>
-        <height>21</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
@@ -201,7 +201,7 @@ border-top-color: rgb(255, 85, 127);
        </font>
       </property>
       <property name="text">
-       <string>开启</string>
+       <string/>
       </property>
      </widget>
      <widget class="QPushButton" name="car_rotate">
@@ -285,7 +285,7 @@ border-top-color: rgb(255, 85, 127);
       <property name="geometry">
        <rect>
         <x>870</x>
-        <y>410</y>
+        <y>400</y>
         <width>60</width>
         <height>60</height>
        </rect>
@@ -338,7 +338,7 @@ border-top-color: rgb(255, 85, 127);
       <property name="geometry">
        <rect>
         <x>810</x>
-        <y>360</y>
+        <y>350</y>
         <width>60</width>
         <height>60</height>
        </rect>
@@ -362,22 +362,22 @@ border-top-color: rgb(255, 85, 127);
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>560</y>
+        <x>400</x>
+        <y>600</y>
         <width>91</width>
-        <height>41</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>微软雅黑</family>
-        <pointsize>-1</pointsize>
-        <weight>62</weight>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family:'微软雅黑';font-size:17px;font-weight:500;</string>
+       <string notr="true">font-family:'微软雅黑';font-weight:bold;color:#2F4056;</string>
       </property>
       <property name="text">
        <string>避障模式</string>
@@ -412,7 +412,7 @@ border-top-color: rgb(255, 85, 127);
       <property name="geometry">
        <rect>
         <x>810</x>
-        <y>460</y>
+        <y>450</y>
         <width>60</width>
         <height>60</height>
        </rect>
@@ -436,8 +436,8 @@ border-top-color: rgb(255, 85, 127);
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>620</x>
-        <y>560</y>
+        <x>800</x>
+        <y>540</y>
         <width>91</width>
         <height>41</height>
        </rect>
@@ -445,13 +445,13 @@ border-top-color: rgb(255, 85, 127);
       <property name="font">
        <font>
         <family>微软雅黑</family>
-        <pointsize>-1</pointsize>
-        <weight>62</weight>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family:'微软雅黑';font-size:17px;font-weight:500;</string>
+       <string notr="true">color:rgb(85, 170, 255);font-family:'微软雅黑';font-weight:bold;</string>
       </property>
       <property name="text">
        <string>键盘控制</string>
@@ -461,7 +461,7 @@ border-top-color: rgb(255, 85, 127);
       <property name="geometry">
        <rect>
         <x>790</x>
-        <y>310</y>
+        <y>290</y>
         <width>111</width>
         <height>41</height>
        </rect>
@@ -485,7 +485,7 @@ border-top-color: rgb(255, 85, 127);
       <property name="geometry">
        <rect>
         <x>750</x>
-        <y>410</y>
+        <y>400</y>
         <width>60</width>
         <height>60</height>
        </rect>
@@ -534,22 +534,22 @@ border-top-color: rgb(255, 85, 127);
      <widget class="QLabel" name="label_9">
       <property name="geometry">
        <rect>
-        <x>420</x>
-        <y>560</y>
+        <x>120</x>
+        <y>550</y>
         <width>101</width>
-        <height>41</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>微软雅黑</family>
-        <pointsize>-1</pointsize>
-        <weight>62</weight>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family:'微软雅黑';font-size:17px;font-weight:500;</string>
+       <string notr="true">font-family:'微软雅黑';font-weight:bold;color:#FF5722;</string>
       </property>
       <property name="text">
        <string>摄像头画面</string>
@@ -558,10 +558,10 @@ border-top-color: rgb(255, 85, 127);
      <widget class="QCheckBox" name="camera_switch">
       <property name="geometry">
        <rect>
-        <x>440</x>
-        <y>600</y>
+        <x>240</x>
+        <y>550</y>
         <width>81</width>
-        <height>21</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
@@ -571,7 +571,7 @@ border-top-color: rgb(255, 85, 127);
        </font>
       </property>
       <property name="text">
-       <string>开启</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLabel" name="origin_camera">
@@ -593,22 +593,22 @@ border-top-color: rgb(255, 85, 127);
      <widget class="QLabel" name="label_11">
       <property name="geometry">
        <rect>
-        <x>810</x>
-        <y>560</y>
+        <x>400</x>
+        <y>550</y>
         <width>91</width>
-        <height>41</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>微软雅黑</family>
-        <pointsize>-1</pointsize>
-        <weight>62</weight>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family:'微软雅黑';font-size:17px;font-weight:500;</string>
+       <string notr="true">font-family:'微软雅黑';font-weight:bold;color:#01AAED;</string>
       </property>
       <property name="text">
        <string>物体跟随</string>
@@ -617,10 +617,10 @@ border-top-color: rgb(255, 85, 127);
      <widget class="QCheckBox" name="follow">
       <property name="geometry">
        <rect>
-        <x>820</x>
-        <y>600</y>
+        <x>520</x>
+        <y>550</y>
         <width>81</width>
-        <height>21</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
@@ -633,16 +633,16 @@ border-top-color: rgb(255, 85, 127);
        <string notr="true"/>
       </property>
       <property name="text">
-       <string>开启</string>
+       <string/>
       </property>
       <property name="iconSize">
        <size>
-        <width>48</width>
-        <height>48</height>
+        <width>36</width>
+        <height>36</height>
        </size>
       </property>
-      <property name="shortcut">
-       <string>Ctrl+S</string>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -1200,6 +1200,9 @@ QPushButton{background-color:rgb(88, 177, 0);color:#F2F2F2;border:0;border-right
    </property>
   </action>
   <action name="actionChange">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>主菜单</string>
    </property>
@@ -1248,17 +1251,23 @@ QPushButton{background-color:rgb(88, 177, 0);color:#F2F2F2;border:0;border-right
    </property>
   </action>
   <action name="actionText">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
    <property name="enabled">
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>设备号：</string>
+    <string>设备状态：</string>
    </property>
    <property name="iconText">
-    <string>设备号：</string>
+    <string>设备状态：</string>
    </property>
    <property name="toolTip">
-    <string>设备号：</string>
+    <string notr="true">设备状态：</string>
    </property>
    <property name="font">
     <font>
@@ -1270,6 +1279,12 @@ QPushButton{background-color:rgb(88, 177, 0);color:#F2F2F2;border:0;border-right
    </property>
   </action>
   <action name="actionStatus">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -1279,6 +1294,9 @@ QPushButton{background-color:rgb(88, 177, 0);color:#F2F2F2;border:0;border-right
    <property name="iconText">
     <string> 未连接</string>
    </property>
+   <property name="statusTip">
+    <string>你好啊</string>
+   </property>
    <property name="font">
     <font>
      <family>微软雅黑</family>
@@ -1287,8 +1305,13 @@ QPushButton{background-color:rgb(88, 177, 0);color:#F2F2F2;border:0;border-right
      <bold>true</bold>
     </font>
    </property>
+   <property name="autoRepeat">
+    <bool>true</bool>
+   </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="../qrc/source.qrc"/>
+ </resources>
  <connections/>
 </ui>
