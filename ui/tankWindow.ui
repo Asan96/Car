@@ -872,8 +872,8 @@ QPushButton:hover{background-color:#009688}</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton{font-family:'微软雅黑';font-size:14px;background-color:#FF0000;border-radius:5px;color:#F8F8F8}
-QPushButton:hover{background-color:#FF5722}</string>
+       <string notr="true">QPushButton{font-family:'微软雅黑';font-size:14px;background-color:#FF5722;border-radius:5px;color:#F8F8F8}
+QPushButton:hover{background-color:#FF0000}</string>
       </property>
       <property name="text">
        <string>停止录音</string>
@@ -889,8 +889,8 @@ QPushButton:hover{background-color:#FF5722}</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton{font-family:'微软雅黑';font-size:14px;background-color:rgb(24, 157, 50);border-radius:5px;color:#F8F8F8}
-QPushButton:hover{background-color:#5FB878}</string>
+       <string notr="true">QPushButton{font-family:'微软雅黑';font-size:14px;background-color:#5FB878;border-radius:5px;color:#F8F8F8}
+QPushButton:hover{background-color:rgb(24, 157, 50)}</string>
       </property>
       <property name="text">
        <string>播放</string>

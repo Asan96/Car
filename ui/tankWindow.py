@@ -292,13 +292,13 @@ class Ui_tankWindow(object):
         self.label_8.setObjectName("label_8")
         self.voice_audio_stop = QtWidgets.QPushButton(self.tab_voice)
         self.voice_audio_stop.setGeometry(QtCore.QRect(670, 550, 81, 41))
-        self.voice_audio_stop.setStyleSheet("QPushButton{font-family:\'微软雅黑\';font-size:14px;background-color:#FF0000;border-radius:5px;color:#F8F8F8}\n"
-"QPushButton:hover{background-color:#FF5722}")
+        self.voice_audio_stop.setStyleSheet("QPushButton{font-family:\'微软雅黑\';font-size:14px;background-color:#FF5722;border-radius:5px;color:#F8F8F8}\n"
+"QPushButton:hover{background-color:#FF0000}")
         self.voice_audio_stop.setObjectName("voice_audio_stop")
         self.voice_audio_play = QtWidgets.QPushButton(self.tab_voice)
         self.voice_audio_play.setGeometry(QtCore.QRect(780, 550, 81, 41))
-        self.voice_audio_play.setStyleSheet("QPushButton{font-family:\'微软雅黑\';font-size:14px;background-color:rgb(24, 157, 50);border-radius:5px;color:#F8F8F8}\n"
-"QPushButton:hover{background-color:#5FB878}")
+        self.voice_audio_play.setStyleSheet("QPushButton{font-family:\'微软雅黑\';font-size:14px;background-color:#5FB878;border-radius:5px;color:#F8F8F8}\n"
+"QPushButton:hover{background-color:rgb(24, 157, 50)}")
         self.voice_audio_play.setObjectName("voice_audio_play")
         self.tabMenuWidget.addTab(self.tab_voice, "")
         self.tab_video = QtWidgets.QWidget()
