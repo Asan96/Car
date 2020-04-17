@@ -283,7 +283,7 @@ class TankWindow(QtWidgets.QMainWindow, Ui_tankWindow):
         print(str_type)
         if str_type == 'close':
             close_camera_client()
-            self.video_pannel.setPixmap(self.background)
+            self.video_pannel.setPixmap(self.background_camera)
             return
         cameraThread = threading.Thread(target=self.thread_camera, args=(self.video_pannel, str_type))
         cameraThread.start()

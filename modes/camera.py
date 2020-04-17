@@ -65,8 +65,8 @@ class ImgServer(object):
         udp_server = self.set_server()
         lastServer = udp_server
         app_path = os.getcwd()
-        faceCascade = cv2.CascadeClassifier(os.path.join(app_path, 'static/cascade/haarcascade_eye.xml'))
-        eyesCascade = cv2.CascadeClassifier(os.path.join(app_path, 'static/cascade/haarcascade_frontalface_alt.xml'))
+        eyesCascade = cv2.CascadeClassifier(os.path.join(app_path, 'static/cascade/haarcascade_eye.xml'))
+        faceCascade = cv2.CascadeClassifier(os.path.join(app_path, 'static/cascade/haarcascade_frontalface_alt.xml'))
         type_dic = {'eyes': faceCascade, 'face': faceCascade}
         RGBImg = ''
         while 1:
